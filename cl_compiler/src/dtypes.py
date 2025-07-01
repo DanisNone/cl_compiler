@@ -35,6 +35,7 @@ class DType:
     def __repr__(self) -> str:
         return self._name
 
+
 bool_ = DType("bool", 1)
 
 uint2 = DType("uint2", 1)

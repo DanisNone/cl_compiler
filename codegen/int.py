@@ -11,7 +11,10 @@ def generate(bits: int, signed: bool) -> parse_result_type:
 
     sign_prefix = "" if signed else "u"
     name = f"{sign_prefix}int{bits}"
-    cl_type = sign_prefix + {8: "char", 16: "short", 32: "int", 64: "long"}[max(bits, 8)]
+    cl_type = (
+        sign_prefix +
+        {8: "char", 16: "short", 32: "int", 64: "long"}[max(bits, 8)]
+    )
 
     max_int = "0b" + "1" * bits
     max_neg = "0b" + "1" + "0" * (bits - 1)

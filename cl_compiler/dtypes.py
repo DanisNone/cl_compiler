@@ -1,4 +1,4 @@
-from cl_compiler.src.dtypes import (
+from cl_compiler.src.dtypes import (  # noqa: F401
     bool_ as bool_,
     uint2 as uint2,
     uint4 as uint4,

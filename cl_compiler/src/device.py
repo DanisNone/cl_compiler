@@ -72,7 +72,7 @@ class Device:
         self.__allocated_memory += nbytes
         return buffer
 
-    def _release_buffer(self, buffer: DeviceBuffer) -> None:
+    def release_buffer(self, buffer: DeviceBuffer) -> None:
         if not buffer.released:
             self.__allocated_memory -= buffer.nbytes
 
@@ -167,7 +167,7 @@ class DeviceBuffer:
         if not self.__released:
             if self.__cl_buffer is not None:
                 self.__cl_buffer.release()
-            self.__device._release_buffer(self)
+            self.__device.release_buffer(self)
             self.__released = True
 
     def __del__(self) -> None:

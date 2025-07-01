@@ -11,12 +11,16 @@ def get_dtype(line: str) -> str:
     return line.lstrip("dt_").strip("_work")
 
 
-def update_funcs(all_funcs: dict[str, list[str]], new_funcs: dict[str, list[str]]):
+def update_funcs(
+    all_funcs: dict[str, list[str]],
+    new_funcs: dict[str, list[str]]
+) -> None:
     for name, funcs in new_funcs.items():
         if name not in all_funcs:
             all_funcs[name] = []
         all_funcs[name].extend(funcs)
-    
+
+
 dtypes: list[str] = []
 path = Path("./cl_compiler/dtypes")
 all_funcs: dict[str, list[str]] = {}
@@ -66,7 +70,9 @@ for op_name in all_funcs:
             assert len(input.split(" ")) == 2
             inputs[i] = get_dtype(input.split(" ")[0])
 
-        funcs_signature.append((op_name, func_name, get_dtype(ret_type), tuple(inputs)))
+        funcs_signature.append(
+            (op_name, func_name, get_dtype(ret_type), tuple(inputs))
+        )
 
 with open(path / "cl_funcs.info", "w") as file:
     for func in funcs_signature:

@@ -2,6 +2,10 @@ from cl_compiler.src.core import (
     CompilerContext as CompilerContext
 )
 
+from cl_compiler.src.compiler import (
+    compile as compile
+)
+
 from cl_compiler.src.elementwise import (
     negative as negative,
     add as add,
