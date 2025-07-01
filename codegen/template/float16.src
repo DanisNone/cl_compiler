@@ -1,0 +1,81 @@
+#include "dtypes/bool.cl"
+#ifndef cl_khr_fp16
+typedef ushort dt_float16;
+typedef float dt_float16_work;
+
+dt_float16_work normalize_float16_input(dt_float16 h) {
+    uint s = (h >> 15) & 0x00000001;
+    uint e = (h >> 10) & 0x0000001F;
+    uint f = h & 0x000003FF;
+
+    uint out_e, out_f;
+
+    if (e == 0) {
+        if (f == 0) {
+            out_e = 0;
+            out_f = 0;
+        } else {
+            e = 1;
+            while ((f & 0x00000400) == 0) {
+                f <<= 1;
+                e--;
+            }
+            f &= 0x000003FF;
+            out_e = 127 - 15 - e;
+            out_f = f << 13;
+        }
+    } else if (e == 31) {
+        out_e = 255;
+        out_f = f << 13;
+    } else {
+        out_e = e + (127 - 15);
+        out_f = f << 13;
+    }
+
+    uint result = (s << 31) | (out_e << 23) | out_f;
+    return as_float(result);
+}
+
+dt_float16 normalize_float16_output(dt_float16_work x) {
+    uint i = as_uint(x);
+    uint s = (i >> 31) & 0x1;
+    int e = ((i >> 23) & 0xFF) - 127 + 15;
+    uint f = i & 0x007FFFFF;
+
+    ushort h;
+
+    if ((i & 0x7FFFFFFF) == 0) {
+        h = (ushort)(s << 15);
+    }
+    else if (((i >> 23) & 0xFF) == 0xFF) {
+        if (f == 0) {
+            h = (ushort)((s << 15) | (0x1F << 10));
+        } else {
+            h = (ushort)((s << 15) | (0x1F << 10) | (f >> 13));
+        }
+    }
+    else if (e <= 0) {
+        if (e < -10) {
+            h = (ushort)(s << 15);
+        } else {
+            f = (f | 0x00800000) >> (1 - e);
+            h = (ushort)((s << 15) | (f >> 13));
+        }
+    }
+    else if (e >= 31) {
+        h = (ushort)((s << 15) | (0x1F << 10));
+    }
+    else {
+        h = (ushort)((s << 15) | (e << 10) | (f >> 13));
+    }
+
+    return h;
+}
+#else
+#pragma OPENCL EXTENSION cl_khr_fp16 : enable
+typedef half dt_float16;
+typedef half dt_float16_work;
+
+static inline dt_float16_work normalize_float16_input(dt_float16 x)  { return x; }
+static inline dt_float16 normalize_float16_output(dt_float16_work x) { return x; }
+#endif

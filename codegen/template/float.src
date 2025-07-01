@@ -1,0 +1,261 @@
+#include "dtypes/bool.h"
+
+$define$
+
+dt_$name$_work dt_zero_$name$() { return 0; }
+dt_$name$_work dt_one_$name$() { return 1; }
+
+__constant dt_$name$_work dt_const_log2_$name$ = 0.6931471805599453;
+__constant dt_$name$_work dt_const_log10_$name$ = 2.302585092994046;
+__constant dt_$name$_work dt_const_pi_$name$ = 3.1415926535897931;
+__constant dt_$name$_work dt_const_e_$name$ = 2.7182818284590451;
+
+!ADDFUNC add
+dt_$name$_work dt_add_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x + y;
+}
+
+!ADDFUNC subtract
+dt_$name$_work dt_subtract_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x - y;
+}
+
+!ADDFUNC multiply
+dt_$name$_work dt_multiply_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x * y;
+}
+
+!ADDFUNC divide
+dt_$name$_work dt_divide_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x / y;
+}
+
+!ADDFUNC min
+dt_$name$_work dt_min_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x < y ? x : y;
+}
+
+!ADDFUNC max
+dt_$name$_work dt_max_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x < y ? y : x;
+}
+
+!ADDFUNC mad
+dt_$name$_work dt_mad_$name$(dt_$name$_work x, dt_$name$_work y, dt_$name$_work z) {
+    return x * y + z;
+}
+
+!ADDFUNC floor_divide
+dt_$name$_work dt_floor_divide_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return floor(x / y);
+}
+
+!ADDFUNC power
+dt_$name$_work dt_power_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return pow(x, y);
+}
+
+!ADDFUNC arctan2
+dt_$name$_work dt_arctan2_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return atan2(x, y);
+}
+
+!ADDFUNC square
+dt_$name$_work dt_square_$name$(dt_$name$_work x) {
+    return x * x;
+}
+
+!ADDFUNC round
+dt_$name$_work dt_round_$name$(dt_$name$_work x) {
+    dt_$name$_work rounded = round(x);
+
+    if (fabs(x - rounded) == (dt_$name$_work)0.5) {
+        rounded = ((dt_$name$_work)2.0) * round(x * (dt_$name$_work)0.5);
+    }
+    return rounded;
+}
+
+!ADDFUNC equal
+dt_bool_work dt_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x == y;
+}
+
+!ADDFUNC not_equal
+dt_bool_work dt_not_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x != y;
+}
+
+!ADDFUNC greater
+dt_bool_work dt_greater_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x > y;
+}
+
+!ADDFUNC greater_equal
+dt_bool_work dt_greater_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x >= y;
+}
+
+!ADDFUNC less
+dt_bool_work dt_less_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x < y;
+}
+
+!ADDFUNC less_equal
+dt_bool_work dt_less_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x <= y;
+}
+
+!ADDFUNC logical_and
+dt_bool_work dt_logical_and_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x && y;
+}
+
+!ADDFUNC logical_or
+dt_bool_work dt_logical_or_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x || y;
+}
+
+!ADDFUNC logical_xor
+dt_bool_work dt_logical_xor_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return (!!x) ^ (!!y);
+}
+
+!ADDFUNC logical_not
+dt_bool_work dt_logical_not_$name$(dt_$name$_work x) {
+    return !x;
+}
+
+!ADDFUNC negative
+dt_$name$_work dt_negative_$name$(dt_$name$_work x) {
+    return -x;
+}
+
+!ADDFUNC abs
+dt_$name$_work dt_abs_$name$(dt_$name$_work x) {
+    return fabs(x);
+}
+
+!ADDFUNC sqrt
+dt_$name$_work dt_sqrt_$name$(dt_$name$_work x) {
+    return sqrt(x);
+}
+
+!ADDFUNC exp
+dt_$name$_work dt_exp_$name$(dt_$name$_work x) {
+    return exp(x);
+}
+
+!ADDFUNC exp2
+dt_$name$_work dt_exp2_$name$(dt_$name$_work x) {
+    return exp2(x);
+}
+
+!ADDFUNC exp10
+dt_$name$_work dt_exp10_$name$(dt_$name$_work x) {
+    return exp10(x);
+}
+
+!ADDFUNC expm1
+dt_$name$_work dt_expm1_$name$(dt_$name$_work x) {
+    return expm1(x);
+}
+
+!ADDFUNC log
+dt_$name$_work dt_log_$name$(dt_$name$_work x) {
+    return log(x);
+}
+
+!ADDFUNC log2
+dt_$name$_work dt_log2_$name$(dt_$name$_work x) {
+    return log2(x);
+}
+
+!ADDFUNC log10
+dt_$name$_work dt_log10_$name$(dt_$name$_work x) {
+    return log10(x);
+}
+
+!ADDFUNC log1p
+dt_$name$_work dt_log1p_$name$(dt_$name$_work x) {
+    return log1p(x);
+}
+
+!ADDFUNC sign
+dt_$name$_work dt_sign_$name$(dt_$name$_work x) {
+    return sign(x);
+}
+
+!ADDFUNC sin
+dt_$name$_work dt_sin_$name$(dt_$name$_work x) {
+    return sin(x);
+}
+
+!ADDFUNC cos
+dt_$name$_work dt_cos_$name$(dt_$name$_work x) {
+    return cos(x);
+}
+
+!ADDFUNC tan
+dt_$name$_work dt_tan_$name$(dt_$name$_work x) {
+    return tan(x);
+}
+
+!ADDFUNC sinh
+dt_$name$_work dt_sinh_$name$(dt_$name$_work x) {
+    return sinh(x);
+}
+
+!ADDFUNC cosh
+dt_$name$_work dt_cosh_$name$(dt_$name$_work x) {
+    return cosh(x);
+}
+
+!ADDFUNC tanh
+dt_$name$_work dt_tanh_$name$(dt_$name$_work x) {
+    return tanh(x);
+}
+
+!ADDFUNC arcsin
+dt_$name$_work dt_arcsin_$name$(dt_$name$_work x) {
+    return asin(x);
+}
+
+!ADDFUNC arccos
+dt_$name$_work dt_arccos_$name$(dt_$name$_work x) {
+    return acos(x);
+}
+
+!ADDFUNC arctan
+dt_$name$_work dt_arctan_$name$(dt_$name$_work x) {
+    return atan(x);
+}
+
+!ADDFUNC arcsinh
+dt_$name$_work dt_arcsinh_$name$(dt_$name$_work x) {
+    return asinh(x);
+}
+
+!ADDFUNC arccosh
+dt_$name$_work dt_arccosh_$name$(dt_$name$_work x) {
+    return acosh(x);
+}
+
+!ADDFUNC arctanh
+dt_$name$_work dt_arctanh_$name$(dt_$name$_work x) {
+    return atanh(x);
+}
+
+!ADDFUNC floor
+dt_$name$_work dt_floor_$name$(dt_$name$_work x) {
+    return floor(x);
+}
+
+!ADDFUNC ceil
+dt_$name$_work dt_ceil_$name$(dt_$name$_work x) {
+    return ceil(x);
+}
+
+!ADDFUNC trunc
+dt_$name$_work dt_trunc_$name$(dt_$name$_work x) {
+    return trunc(x);
+}

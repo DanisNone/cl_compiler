@@ -1,0 +1,187 @@
+#include "dtypes/bool.h"
+
+typedef $cl_type$ dt_$name$;
+typedef $cl_type$ dt_$name$_work;
+
+dt_$name$_work dt_normalize_input_$name$(dt_$name$_work x) {
+!IF 1 NOT $is_subint$
+    return x;
+!IF 1 AND NOT $signed$ $is_subint$
+    return x & (dt_$name$_work)$max_int$;
+!IF  1 AND $signed$ $is_subint$
+    return ((x & (dt_$name$_work)$max_int$) ^ (dt_$name$_work)$max_neg$) - (dt_$name$_work)$max_neg$;
+}
+
+dt_$name$_work dt_normalize_output_$name$(dt_$name$_work x) {
+!IF 1 NOT $is_subint$
+    return x;
+!IF 1 AND NOT $signed$ $is_subint$
+    return x & (dt_$name$_work)$max_int$;
+!IF 1 AND $signed$ $is_subint$
+    return ((x & (dt_$name$_work)$max_int$) ^ (dt_$name$_work)$max_neg$) - (dt_$name$_work)$max_neg$;
+}
+
+
+!ADDFUNC add
+dt_$name$_work dt_add_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x + y;
+}
+
+!ADDFUNC subtract
+dt_$name$_work dt_subtract_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x - y;
+}
+
+!ADDFUNC multiply
+dt_$name$_work dt_multiply_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x * y;
+}
+
+!ADDFUNC modulo
+dt_$name$_work dt_modulo_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x % y;
+}
+
+!ADDFUNC power
+dt_$name$_work dt_power_$name$(dt_$name$_work x, dt_$name$_work y)
+{
+!IF 2 $signed$
+    if (y < 0)
+        return x == 1;
+    if (x == 0)
+        return y == 0;
+
+    dt_$name$_work res = 1;
+    while (y != 0)
+    {
+        if (y & 1)
+            res *= x;
+        x *= x;
+        y >>= 1;
+    }
+    return res;
+}
+
+!ADDFUNC bitwise_and
+dt_$name$_work dt_bitwise_and_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x & y;
+}
+
+!ADDFUNC bitwise_or
+dt_$name$_work dt_bitwise_or_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x | y;
+}
+
+!ADDFUNC bitwise_xor
+dt_$name$_work dt_bitwise_xor_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x ^ y;
+}
+
+!ADDFUNC left_shift
+dt_$name$_work dt_left_shift_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return y >= $bits$ ? 0 : x << y;
+}
+
+!ADDFUNC right_shift
+dt_$name$_work dt_right_shift_$name$(dt_$name$_work x, dt_$name$_work y) {
+!IF 1 NOT $signed$
+    return y >= $bits$ ? 0 : x >> y;
+!IF 1 $signed$
+    return y >= $bits$ ? (-(x < 0)) : x >> y;
+}
+
+!ADDFUNC negative
+dt_$name$_work dt_negative_$name$(dt_$name$_work x) {
+    return -x;
+}
+
+!ADDFUNC bitwise_not
+dt_$name$_work dt_bitwise_not_$name$(dt_$name$_work x) {
+    return ~x;
+}
+
+!ADDFUNC square
+dt_$name$_work dt_square_$name$(dt_$name$_work x) {
+    return x * x;
+}
+
+!ADDFUNC abs
+dt_$name$_work dt_abs_$name$(dt_$name$_work x) {
+!IF 1 $signed$
+    return x < 0 ? -x : x;
+!IF 1 NOT $signed$
+    return x;
+}
+
+!ADDFUNC sign
+dt_$name$_work dt_sign_$name$(dt_$name$_work x) {
+!IF 1 $signed$
+    return (x > 0) - (x < 0);
+!IF 1 NOT $signed$
+    return x > 0;
+}
+
+!ADDFUNC equal
+dt_bool_work dt_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x == y;
+}
+
+!ADDFUNC not_equal
+dt_bool_work dt_not_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x != y;
+}
+
+!ADDFUNC greater
+dt_bool_work dt_greater_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x > y;
+}
+
+!ADDFUNC greater_equal
+dt_bool_work dt_greater_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x >= y;
+}
+
+!ADDFUNC less
+dt_bool_work dt_less_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x < y;
+}
+
+!ADDFUNC less_equal
+dt_bool_work dt_less_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x <= y;
+}
+
+!ADDFUNC logical_and
+dt_bool_work dt_logical_and_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x && y;
+}
+
+!ADDFUNC logical_or
+dt_bool_work dt_logical_or_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x || y;
+}
+
+!ADDFUNC logical_xor
+dt_bool_work dt_logical_xor_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return (!!x) ^ (!!y);
+}
+
+!ADDFUNC logical_not
+dt_bool_work dt_logical_not_$name$(dt_$name$_work x) {
+    return !x;
+}
+
+!ADDFUNC min
+dt_$name$_work dt_min_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x < y ? x : y;
+}
+
+!ADDFUNC max
+dt_$name$_work dt_max_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x < y ? y : x;
+}
+
+!ADDFUNC mad
+dt_$name$_work dt_mad_$name$(dt_$name$_work x, dt_$name$_work y, dt_$name$_work z) {
+    return x * y + z;
+}

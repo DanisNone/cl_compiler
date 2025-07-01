@@ -1,0 +1,601 @@
+add dt_add_bool bool bool bool
+add dt_add_uint2 uint2 uint2 uint2
+add dt_add_int2 int2 int2 int2
+add dt_add_uint4 uint4 uint4 uint4
+add dt_add_int4 int4 int4 int4
+add dt_add_uint8 uint8 uint8 uint8
+add dt_add_int8 int8 int8 int8
+add dt_add_uint16 uint16 uint16 uint16
+add dt_add_int16 int16 int16 int16
+add dt_add_uint32 uint32 uint32 uint32
+add dt_add_int32 int32 int32 int32
+add dt_add_uint64 uint64 uint64 uint64
+add dt_add_int64 int64 int64 int64
+add dt_add_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+add dt_add_bfloat16 bfloat16 bfloat16 bfloat16
+add dt_add_float16 float16 float16 float16
+add dt_add_float32 float32 float32 float32
+add dt_add_float64 float64 float64 float64
+multiply dt_multiply_bool bool bool bool
+multiply dt_multiply_uint2 uint2 uint2 uint2
+multiply dt_multiply_int2 int2 int2 int2
+multiply dt_multiply_uint4 uint4 uint4 uint4
+multiply dt_multiply_int4 int4 int4 int4
+multiply dt_multiply_uint8 uint8 uint8 uint8
+multiply dt_multiply_int8 int8 int8 int8
+multiply dt_multiply_uint16 uint16 uint16 uint16
+multiply dt_multiply_int16 int16 int16 int16
+multiply dt_multiply_uint32 uint32 uint32 uint32
+multiply dt_multiply_int32 int32 int32 int32
+multiply dt_multiply_uint64 uint64 uint64 uint64
+multiply dt_multiply_int64 int64 int64 int64
+multiply dt_multiply_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+multiply dt_multiply_bfloat16 bfloat16 bfloat16 bfloat16
+multiply dt_multiply_float16 float16 float16 float16
+multiply dt_multiply_float32 float32 float32 float32
+multiply dt_multiply_float64 float64 float64 float64
+bitwise_and dt_bitwise_and_bool bool bool bool
+bitwise_and dt_bitwise_and_uint2 uint2 uint2 uint2
+bitwise_and dt_bitwise_and_int2 int2 int2 int2
+bitwise_and dt_bitwise_and_uint4 uint4 uint4 uint4
+bitwise_and dt_bitwise_and_int4 int4 int4 int4
+bitwise_and dt_bitwise_and_uint8 uint8 uint8 uint8
+bitwise_and dt_bitwise_and_int8 int8 int8 int8
+bitwise_and dt_bitwise_and_uint16 uint16 uint16 uint16
+bitwise_and dt_bitwise_and_int16 int16 int16 int16
+bitwise_and dt_bitwise_and_uint32 uint32 uint32 uint32
+bitwise_and dt_bitwise_and_int32 int32 int32 int32
+bitwise_and dt_bitwise_and_uint64 uint64 uint64 uint64
+bitwise_and dt_bitwise_and_int64 int64 int64 int64
+bitwise_or dt_bitwise_or_bool bool bool bool
+bitwise_or dt_bitwise_or_uint2 uint2 uint2 uint2
+bitwise_or dt_bitwise_or_int2 int2 int2 int2
+bitwise_or dt_bitwise_or_uint4 uint4 uint4 uint4
+bitwise_or dt_bitwise_or_int4 int4 int4 int4
+bitwise_or dt_bitwise_or_uint8 uint8 uint8 uint8
+bitwise_or dt_bitwise_or_int8 int8 int8 int8
+bitwise_or dt_bitwise_or_uint16 uint16 uint16 uint16
+bitwise_or dt_bitwise_or_int16 int16 int16 int16
+bitwise_or dt_bitwise_or_uint32 uint32 uint32 uint32
+bitwise_or dt_bitwise_or_int32 int32 int32 int32
+bitwise_or dt_bitwise_or_uint64 uint64 uint64 uint64
+bitwise_or dt_bitwise_or_int64 int64 int64 int64
+bitwise_xor dt_bitwise_xor_bool bool bool bool
+bitwise_xor dt_bitwise_xor_uint2 uint2 uint2 uint2
+bitwise_xor dt_bitwise_xor_int2 int2 int2 int2
+bitwise_xor dt_bitwise_xor_uint4 uint4 uint4 uint4
+bitwise_xor dt_bitwise_xor_int4 int4 int4 int4
+bitwise_xor dt_bitwise_xor_uint8 uint8 uint8 uint8
+bitwise_xor dt_bitwise_xor_int8 int8 int8 int8
+bitwise_xor dt_bitwise_xor_uint16 uint16 uint16 uint16
+bitwise_xor dt_bitwise_xor_int16 int16 int16 int16
+bitwise_xor dt_bitwise_xor_uint32 uint32 uint32 uint32
+bitwise_xor dt_bitwise_xor_int32 int32 int32 int32
+bitwise_xor dt_bitwise_xor_uint64 uint64 uint64 uint64
+bitwise_xor dt_bitwise_xor_int64 int64 int64 int64
+square dt_square_bool bool bool
+square dt_square_uint2 uint2 uint2
+square dt_square_int2 int2 int2
+square dt_square_uint4 uint4 uint4
+square dt_square_int4 int4 int4
+square dt_square_uint8 uint8 uint8
+square dt_square_int8 int8 int8
+square dt_square_uint16 uint16 uint16
+square dt_square_int16 int16 int16
+square dt_square_uint32 uint32 uint32
+square dt_square_int32 int32 int32
+square dt_square_uint64 uint64 uint64
+square dt_square_int64 int64 int64
+square dt_square_float8_e3m4 float8_e3m4 float8_e3m4
+square dt_square_bfloat16 bfloat16 bfloat16
+square dt_square_float16 float16 float16
+square dt_square_float32 float32 float32
+square dt_square_float64 float64 float64
+abs dt_abs_bool bool bool
+abs dt_abs_uint2 uint2 uint2
+abs dt_abs_int2 int2 int2
+abs dt_abs_uint4 uint4 uint4
+abs dt_abs_int4 int4 int4
+abs dt_abs_uint8 uint8 uint8
+abs dt_abs_int8 int8 int8
+abs dt_abs_uint16 uint16 uint16
+abs dt_abs_int16 int16 int16
+abs dt_abs_uint32 uint32 uint32
+abs dt_abs_int32 int32 int32
+abs dt_abs_uint64 uint64 uint64
+abs dt_abs_int64 int64 int64
+abs dt_abs_float8_e3m4 float8_e3m4 float8_e3m4
+abs dt_abs_bfloat16 bfloat16 bfloat16
+abs dt_abs_float16 float16 float16
+abs dt_abs_float32 float32 float32
+abs dt_abs_float64 float64 float64
+equal dt_equal_bool bool bool bool
+equal dt_equal_uint2 bool uint2 uint2
+equal dt_equal_int2 bool int2 int2
+equal dt_equal_uint4 bool uint4 uint4
+equal dt_equal_int4 bool int4 int4
+equal dt_equal_uint8 bool uint8 uint8
+equal dt_equal_int8 bool int8 int8
+equal dt_equal_uint16 bool uint16 uint16
+equal dt_equal_int16 bool int16 int16
+equal dt_equal_uint32 bool uint32 uint32
+equal dt_equal_int32 bool int32 int32
+equal dt_equal_uint64 bool uint64 uint64
+equal dt_equal_int64 bool int64 int64
+equal dt_equal_float8_e3m4 bool float8_e3m4 float8_e3m4
+equal dt_equal_bfloat16 bool bfloat16 bfloat16
+equal dt_equal_float16 bool float16 float16
+equal dt_equal_float32 bool float32 float32
+equal dt_equal_float64 bool float64 float64
+not_equal dt_not_equal_bool bool bool bool
+not_equal dt_not_equal_uint2 bool uint2 uint2
+not_equal dt_not_equal_int2 bool int2 int2
+not_equal dt_not_equal_uint4 bool uint4 uint4
+not_equal dt_not_equal_int4 bool int4 int4
+not_equal dt_not_equal_uint8 bool uint8 uint8
+not_equal dt_not_equal_int8 bool int8 int8
+not_equal dt_not_equal_uint16 bool uint16 uint16
+not_equal dt_not_equal_int16 bool int16 int16
+not_equal dt_not_equal_uint32 bool uint32 uint32
+not_equal dt_not_equal_int32 bool int32 int32
+not_equal dt_not_equal_uint64 bool uint64 uint64
+not_equal dt_not_equal_int64 bool int64 int64
+not_equal dt_not_equal_float8_e3m4 bool float8_e3m4 float8_e3m4
+not_equal dt_not_equal_bfloat16 bool bfloat16 bfloat16
+not_equal dt_not_equal_float16 bool float16 float16
+not_equal dt_not_equal_float32 bool float32 float32
+not_equal dt_not_equal_float64 bool float64 float64
+greater_equal dt_greater_bool bool bool bool
+greater_equal dt_greater_equal_uint2 bool uint2 uint2
+greater_equal dt_greater_equal_int2 bool int2 int2
+greater_equal dt_greater_equal_uint4 bool uint4 uint4
+greater_equal dt_greater_equal_int4 bool int4 int4
+greater_equal dt_greater_equal_uint8 bool uint8 uint8
+greater_equal dt_greater_equal_int8 bool int8 int8
+greater_equal dt_greater_equal_uint16 bool uint16 uint16
+greater_equal dt_greater_equal_int16 bool int16 int16
+greater_equal dt_greater_equal_uint32 bool uint32 uint32
+greater_equal dt_greater_equal_int32 bool int32 int32
+greater_equal dt_greater_equal_uint64 bool uint64 uint64
+greater_equal dt_greater_equal_int64 bool int64 int64
+greater_equal dt_greater_equal_float8_e3m4 bool float8_e3m4 float8_e3m4
+greater_equal dt_greater_equal_bfloat16 bool bfloat16 bfloat16
+greater_equal dt_greater_equal_float16 bool float16 float16
+greater_equal dt_greater_equal_float32 bool float32 float32
+greater_equal dt_greater_equal_float64 bool float64 float64
+greater dt_greater_equal_bool bool bool bool
+greater dt_greater_uint2 bool uint2 uint2
+greater dt_greater_int2 bool int2 int2
+greater dt_greater_uint4 bool uint4 uint4
+greater dt_greater_int4 bool int4 int4
+greater dt_greater_uint8 bool uint8 uint8
+greater dt_greater_int8 bool int8 int8
+greater dt_greater_uint16 bool uint16 uint16
+greater dt_greater_int16 bool int16 int16
+greater dt_greater_uint32 bool uint32 uint32
+greater dt_greater_int32 bool int32 int32
+greater dt_greater_uint64 bool uint64 uint64
+greater dt_greater_int64 bool int64 int64
+greater dt_greater_float8_e3m4 bool float8_e3m4 float8_e3m4
+greater dt_greater_bfloat16 bool bfloat16 bfloat16
+greater dt_greater_float16 bool float16 float16
+greater dt_greater_float32 bool float32 float32
+greater dt_greater_float64 bool float64 float64
+less dt_less_bool bool bool bool
+less dt_less_uint2 bool uint2 uint2
+less dt_less_int2 bool int2 int2
+less dt_less_uint4 bool uint4 uint4
+less dt_less_int4 bool int4 int4
+less dt_less_uint8 bool uint8 uint8
+less dt_less_int8 bool int8 int8
+less dt_less_uint16 bool uint16 uint16
+less dt_less_int16 bool int16 int16
+less dt_less_uint32 bool uint32 uint32
+less dt_less_int32 bool int32 int32
+less dt_less_uint64 bool uint64 uint64
+less dt_less_int64 bool int64 int64
+less dt_less_float8_e3m4 bool float8_e3m4 float8_e3m4
+less dt_less_bfloat16 bool bfloat16 bfloat16
+less dt_less_float16 bool float16 float16
+less dt_less_float32 bool float32 float32
+less dt_less_float64 bool float64 float64
+less_equal dt_less_equal_bool bool bool bool
+less_equal dt_less_equal_uint2 bool uint2 uint2
+less_equal dt_less_equal_int2 bool int2 int2
+less_equal dt_less_equal_uint4 bool uint4 uint4
+less_equal dt_less_equal_int4 bool int4 int4
+less_equal dt_less_equal_uint8 bool uint8 uint8
+less_equal dt_less_equal_int8 bool int8 int8
+less_equal dt_less_equal_uint16 bool uint16 uint16
+less_equal dt_less_equal_int16 bool int16 int16
+less_equal dt_less_equal_uint32 bool uint32 uint32
+less_equal dt_less_equal_int32 bool int32 int32
+less_equal dt_less_equal_uint64 bool uint64 uint64
+less_equal dt_less_equal_int64 bool int64 int64
+less_equal dt_less_equal_float8_e3m4 bool float8_e3m4 float8_e3m4
+less_equal dt_less_equal_bfloat16 bool bfloat16 bfloat16
+less_equal dt_less_equal_float16 bool float16 float16
+less_equal dt_less_equal_float32 bool float32 float32
+less_equal dt_less_equal_float64 bool float64 float64
+logical_and dt_logical_and_bool bool bool bool
+logical_and dt_logical_and_uint2 bool uint2 uint2
+logical_and dt_logical_and_int2 bool int2 int2
+logical_and dt_logical_and_uint4 bool uint4 uint4
+logical_and dt_logical_and_int4 bool int4 int4
+logical_and dt_logical_and_uint8 bool uint8 uint8
+logical_and dt_logical_and_int8 bool int8 int8
+logical_and dt_logical_and_uint16 bool uint16 uint16
+logical_and dt_logical_and_int16 bool int16 int16
+logical_and dt_logical_and_uint32 bool uint32 uint32
+logical_and dt_logical_and_int32 bool int32 int32
+logical_and dt_logical_and_uint64 bool uint64 uint64
+logical_and dt_logical_and_int64 bool int64 int64
+logical_and dt_logical_and_float8_e3m4 bool float8_e3m4 float8_e3m4
+logical_and dt_logical_and_bfloat16 bool bfloat16 bfloat16
+logical_and dt_logical_and_float16 bool float16 float16
+logical_and dt_logical_and_float32 bool float32 float32
+logical_and dt_logical_and_float64 bool float64 float64
+logical_or dt_logical_or_bool bool bool bool
+logical_or dt_logical_or_uint2 bool uint2 uint2
+logical_or dt_logical_or_int2 bool int2 int2
+logical_or dt_logical_or_uint4 bool uint4 uint4
+logical_or dt_logical_or_int4 bool int4 int4
+logical_or dt_logical_or_uint8 bool uint8 uint8
+logical_or dt_logical_or_int8 bool int8 int8
+logical_or dt_logical_or_uint16 bool uint16 uint16
+logical_or dt_logical_or_int16 bool int16 int16
+logical_or dt_logical_or_uint32 bool uint32 uint32
+logical_or dt_logical_or_int32 bool int32 int32
+logical_or dt_logical_or_uint64 bool uint64 uint64
+logical_or dt_logical_or_int64 bool int64 int64
+logical_or dt_logical_or_float8_e3m4 bool float8_e3m4 float8_e3m4
+logical_or dt_logical_or_bfloat16 bool bfloat16 bfloat16
+logical_or dt_logical_or_float16 bool float16 float16
+logical_or dt_logical_or_float32 bool float32 float32
+logical_or dt_logical_or_float64 bool float64 float64
+logical_xor dt_logical_xor_bool bool bool bool
+logical_xor dt_logical_xor_uint2 bool uint2 uint2
+logical_xor dt_logical_xor_int2 bool int2 int2
+logical_xor dt_logical_xor_uint4 bool uint4 uint4
+logical_xor dt_logical_xor_int4 bool int4 int4
+logical_xor dt_logical_xor_uint8 bool uint8 uint8
+logical_xor dt_logical_xor_int8 bool int8 int8
+logical_xor dt_logical_xor_uint16 bool uint16 uint16
+logical_xor dt_logical_xor_int16 bool int16 int16
+logical_xor dt_logical_xor_uint32 bool uint32 uint32
+logical_xor dt_logical_xor_int32 bool int32 int32
+logical_xor dt_logical_xor_uint64 bool uint64 uint64
+logical_xor dt_logical_xor_int64 bool int64 int64
+logical_xor dt_logical_xor_float8_e3m4 bool float8_e3m4 float8_e3m4
+logical_xor dt_logical_xor_bfloat16 bool bfloat16 bfloat16
+logical_xor dt_logical_xor_float16 bool float16 float16
+logical_xor dt_logical_xor_float32 bool float32 float32
+logical_xor dt_logical_xor_float64 bool float64 float64
+logical_not dt_logical_not_bool bool bool
+logical_not dt_logical_not_uint2 bool uint2
+logical_not dt_logical_not_int2 bool int2
+logical_not dt_logical_not_uint4 bool uint4
+logical_not dt_logical_not_int4 bool int4
+logical_not dt_logical_not_uint8 bool uint8
+logical_not dt_logical_not_int8 bool int8
+logical_not dt_logical_not_uint16 bool uint16
+logical_not dt_logical_not_int16 bool int16
+logical_not dt_logical_not_uint32 bool uint32
+logical_not dt_logical_not_int32 bool int32
+logical_not dt_logical_not_uint64 bool uint64
+logical_not dt_logical_not_int64 bool int64
+logical_not dt_logical_not_float8_e3m4 bool float8_e3m4
+logical_not dt_logical_not_bfloat16 bool bfloat16
+logical_not dt_logical_not_float16 bool float16
+logical_not dt_logical_not_float32 bool float32
+logical_not dt_logical_not_float64 bool float64
+min dt_min_bool bool bool bool
+min dt_min_uint2 uint2 uint2 uint2
+min dt_min_int2 int2 int2 int2
+min dt_min_uint4 uint4 uint4 uint4
+min dt_min_int4 int4 int4 int4
+min dt_min_uint8 uint8 uint8 uint8
+min dt_min_int8 int8 int8 int8
+min dt_min_uint16 uint16 uint16 uint16
+min dt_min_int16 int16 int16 int16
+min dt_min_uint32 uint32 uint32 uint32
+min dt_min_int32 int32 int32 int32
+min dt_min_uint64 uint64 uint64 uint64
+min dt_min_int64 int64 int64 int64
+min dt_min_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+min dt_min_bfloat16 bfloat16 bfloat16 bfloat16
+min dt_min_float16 float16 float16 float16
+min dt_min_float32 float32 float32 float32
+min dt_min_float64 float64 float64 float64
+max dt_max_bool bool bool bool
+max dt_max_uint2 uint2 uint2 uint2
+max dt_max_int2 int2 int2 int2
+max dt_max_uint4 uint4 uint4 uint4
+max dt_max_int4 int4 int4 int4
+max dt_max_uint8 uint8 uint8 uint8
+max dt_max_int8 int8 int8 int8
+max dt_max_uint16 uint16 uint16 uint16
+max dt_max_int16 int16 int16 int16
+max dt_max_uint32 uint32 uint32 uint32
+max dt_max_int32 int32 int32 int32
+max dt_max_uint64 uint64 uint64 uint64
+max dt_max_int64 int64 int64 int64
+max dt_max_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+max dt_max_bfloat16 bfloat16 bfloat16 bfloat16
+max dt_max_float16 float16 float16 float16
+max dt_max_float32 float32 float32 float32
+max dt_max_float64 float64 float64 float64
+mad dt_mad_bool bool bool bool bool
+mad dt_mad_uint2 uint2 uint2 uint2 uint2
+mad dt_mad_int2 int2 int2 int2 int2
+mad dt_mad_uint4 uint4 uint4 uint4 uint4
+mad dt_mad_int4 int4 int4 int4 int4
+mad dt_mad_uint8 uint8 uint8 uint8 uint8
+mad dt_mad_int8 int8 int8 int8 int8
+mad dt_mad_uint16 uint16 uint16 uint16 uint16
+mad dt_mad_int16 int16 int16 int16 int16
+mad dt_mad_uint32 uint32 uint32 uint32 uint32
+mad dt_mad_int32 int32 int32 int32 int32
+mad dt_mad_uint64 uint64 uint64 uint64 uint64
+mad dt_mad_int64 int64 int64 int64 int64
+mad dt_mad_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+mad dt_mad_bfloat16 bfloat16 bfloat16 bfloat16 bfloat16
+mad dt_mad_float16 float16 float16 float16 float16
+mad dt_mad_float32 float32 float32 float32 float32
+mad dt_mad_float64 float64 float64 float64 float64
+subtract dt_subtract_uint2 uint2 uint2 uint2
+subtract dt_subtract_int2 int2 int2 int2
+subtract dt_subtract_uint4 uint4 uint4 uint4
+subtract dt_subtract_int4 int4 int4 int4
+subtract dt_subtract_uint8 uint8 uint8 uint8
+subtract dt_subtract_int8 int8 int8 int8
+subtract dt_subtract_uint16 uint16 uint16 uint16
+subtract dt_subtract_int16 int16 int16 int16
+subtract dt_subtract_uint32 uint32 uint32 uint32
+subtract dt_subtract_int32 int32 int32 int32
+subtract dt_subtract_uint64 uint64 uint64 uint64
+subtract dt_subtract_int64 int64 int64 int64
+subtract dt_subtract_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+subtract dt_subtract_bfloat16 bfloat16 bfloat16 bfloat16
+subtract dt_subtract_float16 float16 float16 float16
+subtract dt_subtract_float32 float32 float32 float32
+subtract dt_subtract_float64 float64 float64 float64
+modulo dt_modulo_uint2 uint2 uint2 uint2
+modulo dt_modulo_int2 int2 int2 int2
+modulo dt_modulo_uint4 uint4 uint4 uint4
+modulo dt_modulo_int4 int4 int4 int4
+modulo dt_modulo_uint8 uint8 uint8 uint8
+modulo dt_modulo_int8 int8 int8 int8
+modulo dt_modulo_uint16 uint16 uint16 uint16
+modulo dt_modulo_int16 int16 int16 int16
+modulo dt_modulo_uint32 uint32 uint32 uint32
+modulo dt_modulo_int32 int32 int32 int32
+modulo dt_modulo_uint64 uint64 uint64 uint64
+modulo dt_modulo_int64 int64 int64 int64
+power dt_power_uint2 uint2 uint2 uint2
+power dt_power_int2 int2 int2 int2
+power dt_power_uint4 uint4 uint4 uint4
+power dt_power_int4 int4 int4 int4
+power dt_power_uint8 uint8 uint8 uint8
+power dt_power_int8 int8 int8 int8
+power dt_power_uint16 uint16 uint16 uint16
+power dt_power_int16 int16 int16 int16
+power dt_power_uint32 uint32 uint32 uint32
+power dt_power_int32 int32 int32 int32
+power dt_power_uint64 uint64 uint64 uint64
+power dt_power_int64 int64 int64 int64
+power dt_power_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+power dt_power_bfloat16 bfloat16 bfloat16 bfloat16
+power dt_power_float16 float16 float16 float16
+power dt_power_float32 float32 float32 float32
+power dt_power_float64 float64 float64 float64
+left_shift dt_left_shift_uint2 uint2 uint2 uint2
+left_shift dt_left_shift_int2 int2 int2 int2
+left_shift dt_left_shift_uint4 uint4 uint4 uint4
+left_shift dt_left_shift_int4 int4 int4 int4
+left_shift dt_left_shift_uint8 uint8 uint8 uint8
+left_shift dt_left_shift_int8 int8 int8 int8
+left_shift dt_left_shift_uint16 uint16 uint16 uint16
+left_shift dt_left_shift_int16 int16 int16 int16
+left_shift dt_left_shift_uint32 uint32 uint32 uint32
+left_shift dt_left_shift_int32 int32 int32 int32
+left_shift dt_left_shift_uint64 uint64 uint64 uint64
+left_shift dt_left_shift_int64 int64 int64 int64
+right_shift dt_right_shift_uint2 uint2 uint2 uint2
+right_shift dt_right_shift_int2 int2 int2 int2
+right_shift dt_right_shift_uint4 uint4 uint4 uint4
+right_shift dt_right_shift_int4 int4 int4 int4
+right_shift dt_right_shift_uint8 uint8 uint8 uint8
+right_shift dt_right_shift_int8 int8 int8 int8
+right_shift dt_right_shift_uint16 uint16 uint16 uint16
+right_shift dt_right_shift_int16 int16 int16 int16
+right_shift dt_right_shift_uint32 uint32 uint32 uint32
+right_shift dt_right_shift_int32 int32 int32 int32
+right_shift dt_right_shift_uint64 uint64 uint64 uint64
+right_shift dt_right_shift_int64 int64 int64 int64
+negative dt_negative_uint2 uint2 uint2
+negative dt_negative_int2 int2 int2
+negative dt_negative_uint4 uint4 uint4
+negative dt_negative_int4 int4 int4
+negative dt_negative_uint8 uint8 uint8
+negative dt_negative_int8 int8 int8
+negative dt_negative_uint16 uint16 uint16
+negative dt_negative_int16 int16 int16
+negative dt_negative_uint32 uint32 uint32
+negative dt_negative_int32 int32 int32
+negative dt_negative_uint64 uint64 uint64
+negative dt_negative_int64 int64 int64
+negative dt_negative_float8_e3m4 float8_e3m4 float8_e3m4
+negative dt_negative_bfloat16 bfloat16 bfloat16
+negative dt_negative_float16 float16 float16
+negative dt_negative_float32 float32 float32
+negative dt_negative_float64 float64 float64
+bitwise_not dt_bitwise_not_uint2 uint2 uint2
+bitwise_not dt_bitwise_not_int2 int2 int2
+bitwise_not dt_bitwise_not_uint4 uint4 uint4
+bitwise_not dt_bitwise_not_int4 int4 int4
+bitwise_not dt_bitwise_not_uint8 uint8 uint8
+bitwise_not dt_bitwise_not_int8 int8 int8
+bitwise_not dt_bitwise_not_uint16 uint16 uint16
+bitwise_not dt_bitwise_not_int16 int16 int16
+bitwise_not dt_bitwise_not_uint32 uint32 uint32
+bitwise_not dt_bitwise_not_int32 int32 int32
+bitwise_not dt_bitwise_not_uint64 uint64 uint64
+bitwise_not dt_bitwise_not_int64 int64 int64
+sign dt_sign_uint2 uint2 uint2
+sign dt_sign_int2 int2 int2
+sign dt_sign_uint4 uint4 uint4
+sign dt_sign_int4 int4 int4
+sign dt_sign_uint8 uint8 uint8
+sign dt_sign_int8 int8 int8
+sign dt_sign_uint16 uint16 uint16
+sign dt_sign_int16 int16 int16
+sign dt_sign_uint32 uint32 uint32
+sign dt_sign_int32 int32 int32
+sign dt_sign_uint64 uint64 uint64
+sign dt_sign_int64 int64 int64
+sign dt_sign_float8_e3m4 float8_e3m4 float8_e3m4
+sign dt_sign_bfloat16 bfloat16 bfloat16
+sign dt_sign_float16 float16 float16
+sign dt_sign_float32 float32 float32
+sign dt_sign_float64 float64 float64
+divide dt_divide_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+divide dt_divide_bfloat16 bfloat16 bfloat16 bfloat16
+divide dt_divide_float16 float16 float16 float16
+divide dt_divide_float32 float32 float32 float32
+divide dt_divide_float64 float64 float64 float64
+floor_divide dt_floor_divide_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+floor_divide dt_floor_divide_bfloat16 bfloat16 bfloat16 bfloat16
+floor_divide dt_floor_divide_float16 float16 float16 float16
+floor_divide dt_floor_divide_float32 float32 float32 float32
+floor_divide dt_floor_divide_float64 float64 float64 float64
+arctan2 dt_arctan2_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
+arctan2 dt_arctan2_bfloat16 bfloat16 bfloat16 bfloat16
+arctan2 dt_arctan2_float16 float16 float16 float16
+arctan2 dt_arctan2_float32 float32 float32 float32
+arctan2 dt_arctan2_float64 float64 float64 float64
+round dt_round_float8_e3m4 float8_e3m4 float8_e3m4
+round dt_round_bfloat16 bfloat16 bfloat16
+round dt_round_float16 float16 float16
+round dt_round_float32 float32 float32
+round dt_round_float64 float64 float64
+sqrt dt_sqrt_float8_e3m4 float8_e3m4 float8_e3m4
+sqrt dt_sqrt_bfloat16 bfloat16 bfloat16
+sqrt dt_sqrt_float16 float16 float16
+sqrt dt_sqrt_float32 float32 float32
+sqrt dt_sqrt_float64 float64 float64
+exp dt_exp_float8_e3m4 float8_e3m4 float8_e3m4
+exp dt_exp_bfloat16 bfloat16 bfloat16
+exp dt_exp_float16 float16 float16
+exp dt_exp_float32 float32 float32
+exp dt_exp_float64 float64 float64
+exp2 dt_exp2_float8_e3m4 float8_e3m4 float8_e3m4
+exp2 dt_exp2_bfloat16 bfloat16 bfloat16
+exp2 dt_exp2_float16 float16 float16
+exp2 dt_exp2_float32 float32 float32
+exp2 dt_exp2_float64 float64 float64
+exp10 dt_exp10_float8_e3m4 float8_e3m4 float8_e3m4
+exp10 dt_exp10_bfloat16 bfloat16 bfloat16
+exp10 dt_exp10_float16 float16 float16
+exp10 dt_exp10_float32 float32 float32
+exp10 dt_exp10_float64 float64 float64
+expm1 dt_expm1_float8_e3m4 float8_e3m4 float8_e3m4
+expm1 dt_expm1_bfloat16 bfloat16 bfloat16
+expm1 dt_expm1_float16 float16 float16
+expm1 dt_expm1_float32 float32 float32
+expm1 dt_expm1_float64 float64 float64
+log dt_log_float8_e3m4 float8_e3m4 float8_e3m4
+log dt_log_bfloat16 bfloat16 bfloat16
+log dt_log_float16 float16 float16
+log dt_log_float32 float32 float32
+log dt_log_float64 float64 float64
+log2 dt_log2_float8_e3m4 float8_e3m4 float8_e3m4
+log2 dt_log2_bfloat16 bfloat16 bfloat16
+log2 dt_log2_float16 float16 float16
+log2 dt_log2_float32 float32 float32
+log2 dt_log2_float64 float64 float64
+log10 dt_log10_float8_e3m4 float8_e3m4 float8_e3m4
+log10 dt_log10_bfloat16 bfloat16 bfloat16
+log10 dt_log10_float16 float16 float16
+log10 dt_log10_float32 float32 float32
+log10 dt_log10_float64 float64 float64
+log1p dt_log1p_float8_e3m4 float8_e3m4 float8_e3m4
+log1p dt_log1p_bfloat16 bfloat16 bfloat16
+log1p dt_log1p_float16 float16 float16
+log1p dt_log1p_float32 float32 float32
+log1p dt_log1p_float64 float64 float64
+sin dt_sin_float8_e3m4 float8_e3m4 float8_e3m4
+sin dt_sin_bfloat16 bfloat16 bfloat16
+sin dt_sin_float16 float16 float16
+sin dt_sin_float32 float32 float32
+sin dt_sin_float64 float64 float64
+cos dt_cos_float8_e3m4 float8_e3m4 float8_e3m4
+cos dt_cos_bfloat16 bfloat16 bfloat16
+cos dt_cos_float16 float16 float16
+cos dt_cos_float32 float32 float32
+cos dt_cos_float64 float64 float64
+tan dt_tan_float8_e3m4 float8_e3m4 float8_e3m4
+tan dt_tan_bfloat16 bfloat16 bfloat16
+tan dt_tan_float16 float16 float16
+tan dt_tan_float32 float32 float32
+tan dt_tan_float64 float64 float64
+sinh dt_sinh_float8_e3m4 float8_e3m4 float8_e3m4
+sinh dt_sinh_bfloat16 bfloat16 bfloat16
+sinh dt_sinh_float16 float16 float16
+sinh dt_sinh_float32 float32 float32
+sinh dt_sinh_float64 float64 float64
+cosh dt_cosh_float8_e3m4 float8_e3m4 float8_e3m4
+cosh dt_cosh_bfloat16 bfloat16 bfloat16
+cosh dt_cosh_float16 float16 float16
+cosh dt_cosh_float32 float32 float32
+cosh dt_cosh_float64 float64 float64
+tanh dt_tanh_float8_e3m4 float8_e3m4 float8_e3m4
+tanh dt_tanh_bfloat16 bfloat16 bfloat16
+tanh dt_tanh_float16 float16 float16
+tanh dt_tanh_float32 float32 float32
+tanh dt_tanh_float64 float64 float64
+arcsin dt_arcsin_float8_e3m4 float8_e3m4 float8_e3m4
+arcsin dt_arcsin_bfloat16 bfloat16 bfloat16
+arcsin dt_arcsin_float16 float16 float16
+arcsin dt_arcsin_float32 float32 float32
+arcsin dt_arcsin_float64 float64 float64
+arccos dt_arccos_float8_e3m4 float8_e3m4 float8_e3m4
+arccos dt_arccos_bfloat16 bfloat16 bfloat16
+arccos dt_arccos_float16 float16 float16
+arccos dt_arccos_float32 float32 float32
+arccos dt_arccos_float64 float64 float64
+arctan dt_arctan_float8_e3m4 float8_e3m4 float8_e3m4
+arctan dt_arctan_bfloat16 bfloat16 bfloat16
+arctan dt_arctan_float16 float16 float16
+arctan dt_arctan_float32 float32 float32
+arctan dt_arctan_float64 float64 float64
+arcsinh dt_arcsinh_float8_e3m4 float8_e3m4 float8_e3m4
+arcsinh dt_arcsinh_bfloat16 bfloat16 bfloat16
+arcsinh dt_arcsinh_float16 float16 float16
+arcsinh dt_arcsinh_float32 float32 float32
+arcsinh dt_arcsinh_float64 float64 float64
+arccosh dt_arccosh_float8_e3m4 float8_e3m4 float8_e3m4
+arccosh dt_arccosh_bfloat16 bfloat16 bfloat16
+arccosh dt_arccosh_float16 float16 float16
+arccosh dt_arccosh_float32 float32 float32
+arccosh dt_arccosh_float64 float64 float64
+arctanh dt_arctanh_float8_e3m4 float8_e3m4 float8_e3m4
+arctanh dt_arctanh_bfloat16 bfloat16 bfloat16
+arctanh dt_arctanh_float16 float16 float16
+arctanh dt_arctanh_float32 float32 float32
+arctanh dt_arctanh_float64 float64 float64
+floor dt_floor_float8_e3m4 float8_e3m4 float8_e3m4
+floor dt_floor_bfloat16 bfloat16 bfloat16
+floor dt_floor_float16 float16 float16
+floor dt_floor_float32 float32 float32
+floor dt_floor_float64 float64 float64
+ceil dt_ceil_float8_e3m4 float8_e3m4 float8_e3m4
+ceil dt_ceil_bfloat16 bfloat16 bfloat16
+ceil dt_ceil_float16 float16 float16
+ceil dt_ceil_float32 float32 float32
+ceil dt_ceil_float64 float64 float64
+trunc dt_trunc_float8_e3m4 float8_e3m4 float8_e3m4
+trunc dt_trunc_bfloat16 bfloat16 bfloat16
+trunc dt_trunc_float16 float16 float16
+trunc dt_trunc_float32 float32 float32
+trunc dt_trunc_float64 float64 float64
