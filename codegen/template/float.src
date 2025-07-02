@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_$name$__
+#define __DTYPES_$name$__
+
+#include "dtypes/bool.cl"
 
 $define$
 
@@ -259,3 +262,5 @@ dt_$name$_work dt_ceil_$name$(dt_$name$_work x) {
 dt_$name$_work dt_trunc_$name$(dt_$name$_work x) {
     return trunc(x);
 }
+
+#endif

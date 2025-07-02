@@ -77,3 +77,26 @@ for op_name in all_funcs:
 with open(path / "cl_funcs.info", "w") as file:
     for func in funcs_signature:
         print(*func[:3], *func[3], file=file)
+
+with open(path / "core.cl", "w") as file:
+    for dtype in dtypes:
+        file.write(f"#include \"dtypes/{dtype}.cl\"\n")
+    file.write("""
+inline size_t flat_index(
+    const size_t index,
+    const size_t ndim,
+    constant const size_t* shape,
+    constant const size_t* strides,
+    constant const size_t* factors
+) {
+    size_t flat_idx = strides[0]; // offset of buffers
+    size_t remaining = index;
+
+    for (size_t i = 0; i < ndim; ++i) {
+        size_t coord = remaining / factors[i];
+        remaining = remaining % factors[i];
+        flat_idx += coord * strides[i + 1];
+    }
+
+    return flat_idx;
+}""")

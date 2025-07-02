@@ -1,10 +1,13 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_float64__
+#define __DTYPES_float64__
+
+#include "dtypes/bool.cl"
 
 #ifndef cl_khr_fp64
 typedef ulong dt_float64;
 typedef float dt_float64_work;
 
-dt_float64_work normalize_float64_input(dt_float64 h) {
+dt_float64_work normalize_input_float64(dt_float64 h) {
     uint sign     = (h >> 63) & 0x1;
     int  exponent = (int)((h >> 52) & 0x7FF);
     ulong mantissa = h & 0xFFFFFFFFFFFFFUL;
@@ -44,7 +47,7 @@ dt_float64_work normalize_float64_input(dt_float64 h) {
     return as_float(floatBits);
 }
 
-dt_float64 normalize_float64_output(dt_float64_work f) {
+dt_float64 normalize_output_float64(dt_float64_work f) {
     uint i = as_uint(f);
     uint sign = (i >> 31) & 0x1;
     int exp = (int)((i >> 23) & 0xFF);
@@ -85,8 +88,8 @@ dt_float64 normalize_float64_output(dt_float64_work f) {
 typedef double dt_float64;
 typedef double dt_float64_work;
 
-static inline dt_float64_work normalize_float64_input(dt_float64 x)  { return x; }
-static inline dt_float64 normalize_float64_output(dt_float64_work x) { return x; }
+static inline dt_float64_work dt_normalize_input_float64(dt_float64 x)  { return x; }
+static inline dt_float64 dt_normalize_output_float64(dt_float64_work x) { return x; }
 #endif
 
 dt_float64_work dt_zero_float64() { return 0; }
@@ -297,3 +300,5 @@ dt_float64_work dt_ceil_float64(dt_float64_work x) {
 dt_float64_work dt_trunc_float64(dt_float64_work x) {
     return trunc(x);
 }
+
+#endif

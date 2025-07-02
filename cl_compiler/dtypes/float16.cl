@@ -1,11 +1,14 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_float16__
+#define __DTYPES_float16__
+
+#include "dtypes/bool.cl"
 
 #include "dtypes/bool.cl"
 #ifndef cl_khr_fp16
 typedef ushort dt_float16;
 typedef float dt_float16_work;
 
-dt_float16_work normalize_float16_input(dt_float16 h) {
+dt_float16_work dt_normalize_input_float16(dt_float16 h) {
     uint s = (h >> 15) & 0x00000001;
     uint e = (h >> 10) & 0x0000001F;
     uint f = h & 0x000003FF;
@@ -38,7 +41,7 @@ dt_float16_work normalize_float16_input(dt_float16 h) {
     return as_float(result);
 }
 
-dt_float16 normalize_float16_output(dt_float16_work x) {
+dt_float16 dt_normalize_output_float16(dt_float16_work x) {
     uint i = as_uint(x);
     uint s = (i >> 31) & 0x1;
     int e = ((i >> 23) & 0xFF) - 127 + 15;
@@ -78,8 +81,8 @@ dt_float16 normalize_float16_output(dt_float16_work x) {
 typedef half dt_float16;
 typedef half dt_float16_work;
 
-static inline dt_float16_work normalize_float16_input(dt_float16 x)  { return x; }
-static inline dt_float16 normalize_float16_output(dt_float16_work x) { return x; }
+static inline dt_float16_work dt_normalize_input_float16(dt_float16 x)  { return x; }
+static inline dt_float16 dt_normalize_output_float16(dt_float16_work x) { return x; }
 #endif
 
 
@@ -291,3 +294,5 @@ dt_float16_work dt_ceil_float16(dt_float16_work x) {
 dt_float16_work dt_trunc_float16(dt_float16_work x) {
     return trunc(x);
 }
+
+#endif

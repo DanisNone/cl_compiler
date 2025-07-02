@@ -125,6 +125,12 @@ class Device:
             f'type={type_str}>'
         )
 
+    @property
+    def size_t(self) -> type[np.uint32 | np.uint64]:
+        if self.__cl_device.address_bits == 32:
+            return np.uint32
+        return np.uint64
+
 
 class DeviceBuffer:
     def __init__(
@@ -175,13 +181,23 @@ class DeviceBuffer:
 
 
 class DeviceEvent:
-    def __init__(self, events: list[cl.Event | DeviceEvent]):
+    def __init__(self, events: list[cl.Event | DeviceEvent | None]):
         self.__events: list[cl.Event] = []
         for event in events:
-            if isinstance(event, DeviceEvent):
+            if event is None:
+                continue
+            elif isinstance(event, DeviceEvent):
                 self.__events.extend(event.__events)
             else:
                 self.__events.append(event)
+        self.__events = [
+            event
+            for event in self.__events
+            if (
+                event.command_execution_status !=
+                cl.command_execution_status.COMPLETE
+            )
+        ]
 
     def __get_cl_events__(self) -> list[cl.Event]:
         return self.__events

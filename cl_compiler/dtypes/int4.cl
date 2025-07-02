@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_int4__
+#define __DTYPES_int4__
+
+#include "dtypes/bool.cl"
 
 typedef char dt_int4;
 typedef char dt_int4_work;
@@ -137,3 +140,5 @@ dt_int4_work dt_max_int4(dt_int4_work x, dt_int4_work y) {
 dt_int4_work dt_mad_int4(dt_int4_work x, dt_int4_work y, dt_int4_work z) {
     return x * y + z;
 }
+
+#endif

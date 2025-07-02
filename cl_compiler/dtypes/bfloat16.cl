@@ -1,13 +1,16 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_bfloat16__
+#define __DTYPES_bfloat16__
+
+#include "dtypes/bool.cl"
 
 typedef ushort dt_bfloat16;
 typedef float dt_bfloat16_work;
 
-dt_bfloat16_work normalize_bfloat16_input(dt_bfloat16 h) {
+dt_bfloat16_work dt_normalize_input_bfloat16(dt_bfloat16 h) {
     return as_float(((uint)h) << 16);
 }
 
-dt_bfloat16 normalize_bfloat16_output(dt_bfloat16_work x) {
+dt_bfloat16 dt_normalize_output_bfloat16(dt_bfloat16_work x) {
     uint bits = *(uint*)(&x);
     uint exp = (bits >> 23) & 0xFF;
 
@@ -235,3 +238,5 @@ dt_bfloat16_work dt_ceil_bfloat16(dt_bfloat16_work x) {
 dt_bfloat16_work dt_trunc_bfloat16(dt_bfloat16_work x) {
     return trunc(x);
 }
+
+#endif

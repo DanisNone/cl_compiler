@@ -1,75 +1,58 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_float8_e3m4__
+#define __DTYPES_float8_e3m4__
+
+#include "dtypes/bool.cl"
 
 typedef uchar dt_float8_e3m4;
 typedef float dt_float8_e3m4_work;
 
-dt_float8_e3m4_work normalize_float8e3m4_input(dt_float8_e3m4 h) {
-    uint s = (h >> 7) & 0x1;
-    uint e = (h >> 4) & 0x7;
-    uint f = h & 0xF;
 
-    uint out_e, out_f;
+dt_float8_e3m4_work dt_normalize_input_float8_e3m4(dt_float8_e3m4 f) {
+    bool is_neg = f >= 128;
+    if (is_neg) f -= 128;
 
-    if (e == 0) {
-        if (f == 0) {
-            out_e = 0;
-            out_f = 0;
-        } else {
-            e = 1;
-            while ((f & 0x10) == 0) {
-                f <<= 1;
-                e--;
-            }
-            f &= 0xF;
-            out_e = 127 - 4 - e;
-            out_f = f << 19;  
-        }
-    } else if (e == 7) {      
-        out_e = 255;          
-        out_f = f << 19;
-    } else {
-        out_e = e + (127 - 4);
-        out_f = f << 19;
-    }
-
-    uint result = (s << 31) | (out_e << 23) | out_f;
-    return as_float(result);
+    float res;
+    if (f < 32)
+        res = f / 64.0f;
+    else if (f < 48)
+        res = f / 32.0f - 0.5f;
+    else if (f < 64)
+        res = f / 16.0f - 2.0f;
+    else if (f < 80)
+        res = f / 8.0f - 6.0f;
+    else if (f < 96)
+        res = f / 4.0f - 16.0f;
+    else if (f < 112)
+        res = f / 2.0f - 40.0f;
+    else if (f == 112)
+        res = as_float(0x7f800000); // inf
+    else
+        res = as_float(0x7fc00000); // nan
+    return is_neg ? -res : res;
 }
 
-dt_float8_e3m4 normalize_float8e3m4_output(dt_float8_e3m4_work x) {
-    uint i = as_uint(x);
-    uint s = (i >> 31) & 0x1;
-    int e = ((i >> 23) & 0xFF) - 127 + 4;
-    uint f = i & 0x007FFFFF;
 
-    uchar h;
+dt_float8_e3m4 dt_normalize_output_float8_e3m4(dt_float8_e3m4_work f) {
+    float af = fabs(f);
+    uchar result;
 
-    if ((i & 0x7FFFFFFF) == 0) {
-        h = (uchar)(s << 7);
-    }
-    else if (((i >> 23) & 0xFF) == 0xFF) {
-        if (f == 0) {
-            h = (uchar)((s << 7) | (0x7 << 4));
-        } else {
-            h = (uchar)((s << 7) | (0x7 << 4) | (f >> 19));
-        }
-    }
-    else if (e <= 0) {
-        if (e < -4) {
-            h = (uchar)(s << 7);
-        } else {
-            f = (f | 0x00800000) >> (1 - e);
-            h = (uchar)((s << 7) | (f >> 19));
-        }
-    }
-    else if (e >= 7) {
-        h = (uchar)((s << 7) | (0x7 << 4));
-    }
-    else {
-        h = (uchar)((s << 7) | (e << 4) | (f >> 19));
-    }
-
-    return h;
+    if (af <= 0.5f)
+        result = convert_uchar_rte(af * 64);
+    else if (af <= 1.0f)
+        result = convert_uchar_rte(af * 32) + 16;
+    else if (af <= 2.0f)
+        result = convert_uchar_rte(af * 16) + 32;
+    else if (af <= 4.0f)
+        result = convert_uchar_rte(af * 8) + 48;
+    else if (af <= 8.0f)
+        result = convert_uchar_rte(af * 4) + 64;
+    else if (af <= 16.0f)
+        result = convert_uchar_rte(af * 2) + 80;
+    else if (af > 16.0f)
+        result = 112; // inf
+    else
+        result = 113; // nan
+    return result | (signbit(f) ? 0x80 : 0);
 }
 
 dt_float8_e3m4_work dt_zero_float8_e3m4() { return 0; }
@@ -280,3 +263,5 @@ dt_float8_e3m4_work dt_ceil_float8_e3m4(dt_float8_e3m4_work x) {
 dt_float8_e3m4_work dt_trunc_float8_e3m4(dt_float8_e3m4_work x) {
     return trunc(x);
 }
+
+#endif

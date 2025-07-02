@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_$name$__
+#define __DTYPES_$name$__
+
+#include "dtypes/bool.cl"
 
 typedef $cl_type$ dt_$name$;
 typedef $cl_type$ dt_$name$_work;
@@ -185,3 +188,5 @@ dt_$name$_work dt_max_$name$(dt_$name$_work x, dt_$name$_work y) {
 dt_$name$_work dt_mad_$name$(dt_$name$_work x, dt_$name$_work y, dt_$name$_work z) {
     return x * y + z;
 }
+
+#endif

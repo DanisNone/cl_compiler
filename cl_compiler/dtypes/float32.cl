@@ -1,13 +1,14 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_float32__
+#define __DTYPES_float32__
+
+#include "dtypes/bool.cl"
 
 typedef float dt_float32;
 typedef float dt_float32_work;
 
-static inline dt_float32_work normalize_input_float32(dt_float32 x)  { return x; }
-static inline dt_float32 normalize_output_float32(dt_float32_work x) { return x; }
+static inline dt_float32_work dt_normalize_input_float32(dt_float32 x)  { return x; }
+static inline dt_float32 dt_normalize_output_float32(dt_float32_work x) { return x; }
 
-static inline dt_float32_work dt_zero_float32() { return 0; }
-static inline dt_float32_work dt_one_float32() { return 1; }
 
 dt_float32_work dt_zero_float32() { return 0; }
 dt_float32_work dt_one_float32() { return 1; }
@@ -217,3 +218,5 @@ dt_float32_work dt_ceil_float32(dt_float32_work x) {
 dt_float32_work dt_trunc_float32(dt_float32_work x) {
     return trunc(x);
 }
+
+#endif

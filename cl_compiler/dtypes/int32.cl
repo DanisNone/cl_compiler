@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_int32__
+#define __DTYPES_int32__
+
+#include "dtypes/bool.cl"
 
 typedef int dt_int32;
 typedef int dt_int32_work;
@@ -137,3 +140,5 @@ dt_int32_work dt_max_int32(dt_int32_work x, dt_int32_work y) {
 dt_int32_work dt_mad_int32(dt_int32_work x, dt_int32_work y, dt_int32_work z) {
     return x * y + z;
 }
+
+#endif

@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import ClassVar, TypeAlias
-from cl_compiler.src.core import Array, Operation, get_current_context
+from cl_compiler.src.core import Array, MemoryInfo, Operation
+from cl_compiler.src.core import get_current_context
 from cl_compiler.src.dtypes import DType
 
 
@@ -60,6 +61,28 @@ class ElementWise(Operation):
         self.output_shape = inputs[0].shape
         self._cl_func_name, self.output_dtype = cl_funcs[self._name][dtypes]
 
+    @property
+    def name(self) -> str:
+        return self._name
+
+    @property
+    def cl_func_name(self) -> str:
+        return self._cl_func_name
+
+    def buffer_owner(
+        self,
+        inputs: list[Array],
+        mem_info: list[MemoryInfo]
+    ) -> None:
+        return None
+
+    def compute_strides(
+        self,
+        inputs: list[Array],
+        mem_info: list[MemoryInfo]
+    ) -> MemoryInfo:
+        return MemoryInfo.default(self.output_shape)
+
 
 class ElementWiseUnary(ElementWise):
     def __init__(self, x: Array):
@@ -79,8 +102,16 @@ class Add(ElementWiseBinary):
     _name = "add"
 
 
+class Subtract(ElementWiseBinary):
+    _name = "subtract"
+
+
 class Multiply(ElementWiseBinary):
     _name = "multiply"
+
+
+class Divide(ElementWiseBinary):
+    _name = "divide"
 
 
 def negative(x: Array) -> Array:
@@ -91,5 +122,13 @@ def add(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Add, x, y)
 
 
+def subtract(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Subtract, x, y)
+
+
 def multiply(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Multiply, x, y)
+
+
+def divide(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Divide, x, y)

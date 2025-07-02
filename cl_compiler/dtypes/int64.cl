@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_int64__
+#define __DTYPES_int64__
+
+#include "dtypes/bool.cl"
 
 typedef long dt_int64;
 typedef long dt_int64_work;
@@ -137,3 +140,5 @@ dt_int64_work dt_max_int64(dt_int64_work x, dt_int64_work y) {
 dt_int64_work dt_mad_int64(dt_int64_work x, dt_int64_work y, dt_int64_work z) {
     return x * y + z;
 }
+
+#endif

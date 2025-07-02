@@ -1,3 +1,6 @@
+#ifndef __DTYPES_bool__
+#define __DTYPES_bool__
+
 typedef bool dt_bool;
 typedef bool dt_bool_work;
 
@@ -88,3 +91,5 @@ dt_bool_work dt_max_bool(dt_bool_work x, dt_bool_work y) {
 dt_bool_work dt_mad_bool(dt_bool_work x, dt_bool_work y, dt_bool_work z) {
     return (x && y) || z;
 }
+
+#endif

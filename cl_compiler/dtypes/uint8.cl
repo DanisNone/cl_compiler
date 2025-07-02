@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_uint8__
+#define __DTYPES_uint8__
+
+#include "dtypes/bool.cl"
 
 typedef uchar dt_uint8;
 typedef uchar dt_uint8_work;
@@ -135,3 +138,5 @@ dt_uint8_work dt_max_uint8(dt_uint8_work x, dt_uint8_work y) {
 dt_uint8_work dt_mad_uint8(dt_uint8_work x, dt_uint8_work y, dt_uint8_work z) {
     return x * y + z;
 }
+
+#endif

@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_int16__
+#define __DTYPES_int16__
+
+#include "dtypes/bool.cl"
 
 typedef short dt_int16;
 typedef short dt_int16_work;
@@ -137,3 +140,5 @@ dt_int16_work dt_max_int16(dt_int16_work x, dt_int16_work y) {
 dt_int16_work dt_mad_int16(dt_int16_work x, dt_int16_work y, dt_int16_work z) {
     return x * y + z;
 }
+
+#endif

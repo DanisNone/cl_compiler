@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_uint64__
+#define __DTYPES_uint64__
+
+#include "dtypes/bool.cl"
 
 typedef ulong dt_uint64;
 typedef ulong dt_uint64_work;
@@ -135,3 +138,5 @@ dt_uint64_work dt_max_uint64(dt_uint64_work x, dt_uint64_work y) {
 dt_uint64_work dt_mad_uint64(dt_uint64_work x, dt_uint64_work y, dt_uint64_work z) {
     return x * y + z;
 }
+
+#endif

@@ -1,4 +1,7 @@
-#include "dtypes/bool.h"
+#ifndef __DTYPES_uint2__
+#define __DTYPES_uint2__
+
+#include "dtypes/bool.cl"
 
 typedef uchar dt_uint2;
 typedef uchar dt_uint2_work;
@@ -135,3 +138,5 @@ dt_uint2_work dt_max_uint2(dt_uint2_work x, dt_uint2_work y) {
 dt_uint2_work dt_mad_uint2(dt_uint2_work x, dt_uint2_work y, dt_uint2_work z) {
     return x * y + z;
 }
+
+#endif
