@@ -3,7 +3,6 @@
 
 #include "dtypes/bool.cl"
 
-#include "dtypes/bool.cl"
 #ifndef cl_khr_fp16
 typedef ushort dt_float16;
 typedef float dt_float16_work;

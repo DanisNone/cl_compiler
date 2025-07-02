@@ -7,10 +7,10 @@
 typedef ulong dt_float64;
 typedef float dt_float64_work;
 
-dt_float64_work normalize_input_float64(dt_float64 h) {
+dt_float64_work dt_normalize_input_float64(dt_float64 h) {
     uint sign     = (h >> 63) & 0x1;
     int  exponent = (int)((h >> 52) & 0x7FF);
-    ulong mantissa = h & 0xFFFFFFFFFFFFFUL;
+    ulong mantissa = h & (((ulong)1 << 52) - 1);
 
     if (exponent == 0x7FF) {
         uint f_sign = sign << 31;
@@ -38,7 +38,7 @@ dt_float64_work normalize_input_float64(dt_float64 h) {
             return as_float((sign << 31) | 0x7F800000);
         } else {
             f_exp = exponent;
-            ulong full_mant = mantissa | (1UL << 52);
+            ulong full_mant = mantissa | ((ulong)1 << 52);
             f_mant = (uint)(full_mant >> (52 - 23));
         }
     }
@@ -47,7 +47,7 @@ dt_float64_work normalize_input_float64(dt_float64 h) {
     return as_float(floatBits);
 }
 
-dt_float64 normalize_output_float64(dt_float64_work f) {
+dt_float64 dt_normalize_output_float64(dt_float64_work f) {
     uint i = as_uint(f);
     uint sign = (i >> 31) & 0x1;
     int exp = (int)((i >> 23) & 0xFF);
@@ -74,7 +74,7 @@ dt_float64 normalize_output_float64(dt_float64_work f) {
         }
     } else if (exp == 0xFF) {
         out_exp = 0x7FF;
-        out_frac = (frac != 0) ? (((ulong)frac) << (52 - 23)) | 0x0008000000000000UL : 0;
+        out_frac = (frac != 0) ? (((ulong)frac) << (52 - 23)) | ((ulong)1 << 51) : 0;
         return out_sign | ((ulong)out_exp << 52) | out_frac;
     } else {
         out_exp = exp - 127 + 1023;
