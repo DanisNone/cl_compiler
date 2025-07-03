@@ -97,329 +97,438 @@ class ElementWiseBinary(ElementWise):
 class Abs(ElementWiseUnary):
     _name = "abs"
 
+
 class Add(ElementWiseBinary):
     _name = "add"
+
 
 class Arccos(ElementWiseUnary):
     _name = "arccos"
 
+
 class Arccosh(ElementWiseUnary):
     _name = "arccosh"
+
 
 class Arcsin(ElementWiseUnary):
     _name = "arcsin"
 
+
 class Arcsinh(ElementWiseUnary):
     _name = "arcsinh"
+
 
 class Arctan(ElementWiseUnary):
     _name = "arctan"
 
+
 class Arctan2(ElementWiseBinary):
     _name = "arctan2"
+
 
 class Arctanh(ElementWiseUnary):
     _name = "arctanh"
 
-class Bitwise_and(ElementWiseBinary):
+
+class BitwiseAND(ElementWiseBinary):
     _name = "bitwise_and"
 
-class Bitwise_not(ElementWiseUnary):
+
+class BitwiseNOT(ElementWiseUnary):
     _name = "bitwise_not"
 
-class Bitwise_or(ElementWiseBinary):
+
+class BitwiseOR(ElementWiseBinary):
     _name = "bitwise_or"
 
-class Bitwise_xor(ElementWiseBinary):
+
+class BitwiseXOR(ElementWiseBinary):
     _name = "bitwise_xor"
+
 
 class Ceil(ElementWiseUnary):
     _name = "ceil"
 
+
 class Cos(ElementWiseUnary):
     _name = "cos"
+
 
 class Cosh(ElementWiseUnary):
     _name = "cosh"
 
+
 class Divide(ElementWiseBinary):
     _name = "divide"
+
 
 class Equal(ElementWiseBinary):
     _name = "equal"
 
+
 class Exp(ElementWiseUnary):
     _name = "exp"
+
 
 class Exp10(ElementWiseUnary):
     _name = "exp10"
 
+
 class Exp2(ElementWiseUnary):
     _name = "exp2"
+
 
 class Expm1(ElementWiseUnary):
     _name = "expm1"
 
+
 class Floor(ElementWiseUnary):
     _name = "floor"
 
-class Floor_divide(ElementWiseBinary):
+
+class FloorDivide(ElementWiseBinary):
     _name = "floor_divide"
+
 
 class Greater(ElementWiseBinary):
     _name = "greater"
 
-class Greater_equal(ElementWiseBinary):
+
+class GreaterEqual(ElementWiseBinary):
     _name = "greater_equal"
 
-class Left_shift(ElementWiseBinary):
+
+class LeftShift(ElementWiseBinary):
     _name = "left_shift"
+
 
 class Less(ElementWiseBinary):
     _name = "less"
 
-class Less_equal(ElementWiseBinary):
+
+class LessEqual(ElementWiseBinary):
     _name = "less_equal"
+
 
 class Log(ElementWiseUnary):
     _name = "log"
 
+
 class Log10(ElementWiseUnary):
     _name = "log10"
+
 
 class Log1p(ElementWiseUnary):
     _name = "log1p"
 
+
 class Log2(ElementWiseUnary):
     _name = "log2"
 
-class Logical_and(ElementWiseBinary):
+
+class LogicalAnd(ElementWiseBinary):
     _name = "logical_and"
 
-class Logical_not(ElementWiseUnary):
+
+class LogicalNot(ElementWiseUnary):
     _name = "logical_not"
 
-class Logical_or(ElementWiseBinary):
+
+class LogicalOR(ElementWiseBinary):
     _name = "logical_or"
 
-class Logical_xor(ElementWiseBinary):
+
+class LogicalXOR(ElementWiseBinary):
     _name = "logical_xor"
+
 
 class Max(ElementWiseBinary):
     _name = "max"
 
+
 class Min(ElementWiseBinary):
     _name = "min"
+
 
 class Mod(ElementWiseBinary):
     _name = "mod"
 
+
 class Multiply(ElementWiseBinary):
     _name = "multiply"
+
 
 class Negative(ElementWiseUnary):
     _name = "negative"
 
-class Not_equal(ElementWiseBinary):
+
+class NotEqual(ElementWiseBinary):
     _name = "not_equal"
+
 
 class Power(ElementWiseBinary):
     _name = "power"
 
-class Right_shift(ElementWiseBinary):
+
+class RightShift(ElementWiseBinary):
     _name = "right_shift"
+
 
 class Round(ElementWiseUnary):
     _name = "round"
 
+
 class Sign(ElementWiseUnary):
     _name = "sign"
+
 
 class Sin(ElementWiseUnary):
     _name = "sin"
 
+
 class Sinh(ElementWiseUnary):
     _name = "sinh"
+
 
 class Sqrt(ElementWiseUnary):
     _name = "sqrt"
 
+
 class Square(ElementWiseUnary):
     _name = "square"
+
 
 class Subtract(ElementWiseBinary):
     _name = "subtract"
 
+
 class Tan(ElementWiseUnary):
     _name = "tan"
+
 
 class Tanh(ElementWiseUnary):
     _name = "tanh"
 
+
 class Trunc(ElementWiseUnary):
     _name = "trunc"
+
 
 def abs(x: Array) -> Array:
     return get_current_context().add_operation(Abs, x)
 
+
 def add(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Add, x, y)
+
 
 def arccos(x: Array) -> Array:
     return get_current_context().add_operation(Arccos, x)
 
+
 def arccosh(x: Array) -> Array:
     return get_current_context().add_operation(Arccosh, x)
+
 
 def arcsin(x: Array) -> Array:
     return get_current_context().add_operation(Arcsin, x)
 
+
 def arcsinh(x: Array) -> Array:
     return get_current_context().add_operation(Arcsinh, x)
+
 
 def arctan(x: Array) -> Array:
     return get_current_context().add_operation(Arctan, x)
 
+
 def arctan2(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Arctan2, x, y)
+
 
 def arctanh(x: Array) -> Array:
     return get_current_context().add_operation(Arctanh, x)
 
+
 def bitwise_and(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Bitwise_and, x, y)
+    return get_current_context().add_operation(BitwiseAND, x, y)
+
 
 def bitwise_not(x: Array) -> Array:
-    return get_current_context().add_operation(Bitwise_not, x)
+    return get_current_context().add_operation(BitwiseNOT, x)
+
 
 def bitwise_or(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Bitwise_or, x, y)
+    return get_current_context().add_operation(BitwiseOR, x, y)
+
 
 def bitwise_xor(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Bitwise_xor, x, y)
+    return get_current_context().add_operation(BitwiseXOR, x, y)
+
 
 def ceil(x: Array) -> Array:
     return get_current_context().add_operation(Ceil, x)
 
+
 def cos(x: Array) -> Array:
     return get_current_context().add_operation(Cos, x)
+
 
 def cosh(x: Array) -> Array:
     return get_current_context().add_operation(Cosh, x)
 
+
 def divide(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Divide, x, y)
+
 
 def equal(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Equal, x, y)
 
+
 def exp(x: Array) -> Array:
     return get_current_context().add_operation(Exp, x)
+
 
 def exp10(x: Array) -> Array:
     return get_current_context().add_operation(Exp10, x)
 
+
 def exp2(x: Array) -> Array:
     return get_current_context().add_operation(Exp2, x)
+
 
 def expm1(x: Array) -> Array:
     return get_current_context().add_operation(Expm1, x)
 
+
 def floor(x: Array) -> Array:
     return get_current_context().add_operation(Floor, x)
 
+
 def floor_divide(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Floor_divide, x, y)
+    return get_current_context().add_operation(FloorDivide, x, y)
+
 
 def greater(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Greater, x, y)
 
+
 def greater_equal(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Greater_equal, x, y)
+    return get_current_context().add_operation(GreaterEqual, x, y)
+
 
 def left_shift(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Left_shift, x, y)
+    return get_current_context().add_operation(LeftShift, x, y)
+
 
 def less(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Less, x, y)
 
+
 def less_equal(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Less_equal, x, y)
+    return get_current_context().add_operation(LessEqual, x, y)
+
 
 def log(x: Array) -> Array:
     return get_current_context().add_operation(Log, x)
 
+
 def log10(x: Array) -> Array:
     return get_current_context().add_operation(Log10, x)
+
 
 def log1p(x: Array) -> Array:
     return get_current_context().add_operation(Log1p, x)
 
+
 def log2(x: Array) -> Array:
     return get_current_context().add_operation(Log2, x)
 
+
 def logical_and(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Logical_and, x, y)
+    return get_current_context().add_operation(LogicalAnd, x, y)
+
 
 def logical_not(x: Array) -> Array:
-    return get_current_context().add_operation(Logical_not, x)
+    return get_current_context().add_operation(LogicalNot, x)
+
 
 def logical_or(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Logical_or, x, y)
+    return get_current_context().add_operation(LogicalOR, x, y)
+
 
 def logical_xor(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Logical_xor, x, y)
+    return get_current_context().add_operation(LogicalXOR, x, y)
+
 
 def max(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Max, x, y)
 
+
 def min(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Min, x, y)
+
 
 def mod(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Mod, x, y)
 
+
 def multiply(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Multiply, x, y)
+
 
 def negative(x: Array) -> Array:
     return get_current_context().add_operation(Negative, x)
 
+
 def not_equal(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Not_equal, x, y)
+    return get_current_context().add_operation(NotEqual, x, y)
+
 
 def power(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Power, x, y)
 
+
 def right_shift(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Right_shift, x, y)
+    return get_current_context().add_operation(RightShift, x, y)
+
 
 def round(x: Array) -> Array:
     return get_current_context().add_operation(Round, x)
 
+
 def sign(x: Array) -> Array:
     return get_current_context().add_operation(Sign, x)
+
 
 def sin(x: Array) -> Array:
     return get_current_context().add_operation(Sin, x)
 
+
 def sinh(x: Array) -> Array:
     return get_current_context().add_operation(Sinh, x)
+
 
 def sqrt(x: Array) -> Array:
     return get_current_context().add_operation(Sqrt, x)
 
+
 def square(x: Array) -> Array:
     return get_current_context().add_operation(Square, x)
+
 
 def subtract(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Subtract, x, y)
 
+
 def tan(x: Array) -> Array:
     return get_current_context().add_operation(Tan, x)
 
+
 def tanh(x: Array) -> Array:
     return get_current_context().add_operation(Tanh, x)
+
 
 def trunc(x: Array) -> Array:
     return get_current_context().add_operation(Trunc, x)
