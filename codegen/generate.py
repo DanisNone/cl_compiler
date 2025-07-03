@@ -5,6 +5,7 @@ import int as gen_int
 import float as gen_float
 import complex as gen_complex
 
+
 def get_dtype(line: str) -> str:
     assert line.startswith("dt_"), line
     assert line.endswith("_work"), line
