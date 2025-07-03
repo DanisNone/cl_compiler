@@ -242,11 +242,11 @@ class LogicalXOR(ElementWiseBinary):
     _name = "logical_xor"
 
 
-class Max(ElementWiseBinary):
+class Maximum(ElementWiseBinary):
     _name = "max"
 
 
-class Min(ElementWiseBinary):
+class Minimum(ElementWiseBinary):
     _name = "min"
 
 
@@ -462,12 +462,12 @@ def logical_xor(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(LogicalXOR, x, y)
 
 
-def max(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Max, x, y)
+def maximum(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Maximum, x, y)
 
 
-def min(x: Array, y: Array) -> Array:
-    return get_current_context().add_operation(Min, x, y)
+def minimum(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Minimum, x, y)
 
 
 def mod(x: Array, y: Array) -> Array:
