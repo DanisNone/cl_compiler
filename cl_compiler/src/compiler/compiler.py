@@ -115,12 +115,16 @@ class Compiler:
             if array.shape != inp.shape:
                 raise ValueError(f"gived {array.shape=} waited array.shape={inp.shape}")
             if array.dtype != inp.dtype:
-                raise ValueError(f"gived {array.dtype=} waited array.dtype={inp.shape}")
+                raise ValueError(f"gived {array.dtype=} waited array.dtype={inp.dtype}")
 
             mem_info[inp] = MemoryInfo(array.strides, array.offset)
             buffers[inp] = array.buffer
             events[inp] = array.event
 
+        for const in self.context.constants:
+            buffers[const] = const.buffer
+            mem_info[const] = MemoryInfo(const.strides, const.offset)
+    
         zip_ = zip(self.kernels, self.context.operations)
         for kernel, (operation, output_id, input_ids) in zip_:
             input_arrays = [
