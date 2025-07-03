@@ -113,22 +113,6 @@ dt_bool_work dt_less_equal_int64(dt_int64_work x, dt_int64_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_int64(dt_int64_work x, dt_int64_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_int64(dt_int64_work x, dt_int64_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_int64(dt_int64_work x, dt_int64_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_int64(dt_int64_work x) {
-    return !x;
-}
-
 dt_int64_work dt_min_int64(dt_int64_work x, dt_int64_work y) {
     return x < y ? x : y;
 }

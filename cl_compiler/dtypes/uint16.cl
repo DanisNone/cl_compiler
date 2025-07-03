@@ -111,22 +111,6 @@ dt_bool_work dt_less_equal_uint16(dt_uint16_work x, dt_uint16_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_uint16(dt_uint16_work x, dt_uint16_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_uint16(dt_uint16_work x, dt_uint16_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_uint16(dt_uint16_work x, dt_uint16_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_uint16(dt_uint16_work x) {
-    return !x;
-}
-
 dt_uint16_work dt_min_uint16(dt_uint16_work x, dt_uint16_work y) {
     return x < y ? x : y;
 }

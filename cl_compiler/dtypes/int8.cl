@@ -113,22 +113,6 @@ dt_bool_work dt_less_equal_int8(dt_int8_work x, dt_int8_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_int8(dt_int8_work x, dt_int8_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_int8(dt_int8_work x, dt_int8_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_int8(dt_int8_work x, dt_int8_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_int8(dt_int8_work x) {
-    return !x;
-}
-
 dt_int8_work dt_min_int8(dt_int8_work x, dt_int8_work y) {
     return x < y ? x : y;
 }

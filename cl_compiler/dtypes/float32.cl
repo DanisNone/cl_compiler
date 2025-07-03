@@ -95,22 +95,6 @@ dt_bool_work dt_less_equal_float32(dt_float32_work x, dt_float32_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_float32(dt_float32_work x, dt_float32_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_float32(dt_float32_work x, dt_float32_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_float32(dt_float32_work x, dt_float32_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_float32(dt_float32_work x) {
-    return !x;
-}
-
 dt_float32_work dt_negative_float32(dt_float32_work x) {
     return -x;
 }

@@ -140,22 +140,6 @@ dt_bool_work dt_less_equal_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_wor
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_float8_e3m4(dt_float8_e3m4_work x) {
-    return !x;
-}
-
 dt_float8_e3m4_work dt_negative_float8_e3m4(dt_float8_e3m4_work x) {
     return -x;
 }

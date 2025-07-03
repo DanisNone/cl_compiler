@@ -111,22 +111,6 @@ dt_bool_work dt_less_equal_uint2(dt_uint2_work x, dt_uint2_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_uint2(dt_uint2_work x, dt_uint2_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_uint2(dt_uint2_work x, dt_uint2_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_uint2(dt_uint2_work x, dt_uint2_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_uint2(dt_uint2_work x) {
-    return !x;
-}
-
 dt_uint2_work dt_min_uint2(dt_uint2_work x, dt_uint2_work y) {
     return x < y ? x : y;
 }

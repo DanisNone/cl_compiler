@@ -218,77 +218,9 @@ less_equal dt_less_equal_float16 bool float16 float16
 less_equal dt_less_equal_float32 bool float32 float32
 less_equal dt_less_equal_float64 bool float64 float64
 logical_and dt_logical_and_bool bool bool bool
-logical_and dt_logical_and_uint2 bool uint2 uint2
-logical_and dt_logical_and_int2 bool int2 int2
-logical_and dt_logical_and_uint4 bool uint4 uint4
-logical_and dt_logical_and_int4 bool int4 int4
-logical_and dt_logical_and_uint8 bool uint8 uint8
-logical_and dt_logical_and_int8 bool int8 int8
-logical_and dt_logical_and_uint16 bool uint16 uint16
-logical_and dt_logical_and_int16 bool int16 int16
-logical_and dt_logical_and_uint32 bool uint32 uint32
-logical_and dt_logical_and_int32 bool int32 int32
-logical_and dt_logical_and_uint64 bool uint64 uint64
-logical_and dt_logical_and_int64 bool int64 int64
-logical_and dt_logical_and_float8_e3m4 bool float8_e3m4 float8_e3m4
-logical_and dt_logical_and_bfloat16 bool bfloat16 bfloat16
-logical_and dt_logical_and_float16 bool float16 float16
-logical_and dt_logical_and_float32 bool float32 float32
-logical_and dt_logical_and_float64 bool float64 float64
 logical_or dt_logical_or_bool bool bool bool
-logical_or dt_logical_or_uint2 bool uint2 uint2
-logical_or dt_logical_or_int2 bool int2 int2
-logical_or dt_logical_or_uint4 bool uint4 uint4
-logical_or dt_logical_or_int4 bool int4 int4
-logical_or dt_logical_or_uint8 bool uint8 uint8
-logical_or dt_logical_or_int8 bool int8 int8
-logical_or dt_logical_or_uint16 bool uint16 uint16
-logical_or dt_logical_or_int16 bool int16 int16
-logical_or dt_logical_or_uint32 bool uint32 uint32
-logical_or dt_logical_or_int32 bool int32 int32
-logical_or dt_logical_or_uint64 bool uint64 uint64
-logical_or dt_logical_or_int64 bool int64 int64
-logical_or dt_logical_or_float8_e3m4 bool float8_e3m4 float8_e3m4
-logical_or dt_logical_or_bfloat16 bool bfloat16 bfloat16
-logical_or dt_logical_or_float16 bool float16 float16
-logical_or dt_logical_or_float32 bool float32 float32
-logical_or dt_logical_or_float64 bool float64 float64
 logical_xor dt_logical_xor_bool bool bool bool
-logical_xor dt_logical_xor_uint2 bool uint2 uint2
-logical_xor dt_logical_xor_int2 bool int2 int2
-logical_xor dt_logical_xor_uint4 bool uint4 uint4
-logical_xor dt_logical_xor_int4 bool int4 int4
-logical_xor dt_logical_xor_uint8 bool uint8 uint8
-logical_xor dt_logical_xor_int8 bool int8 int8
-logical_xor dt_logical_xor_uint16 bool uint16 uint16
-logical_xor dt_logical_xor_int16 bool int16 int16
-logical_xor dt_logical_xor_uint32 bool uint32 uint32
-logical_xor dt_logical_xor_int32 bool int32 int32
-logical_xor dt_logical_xor_uint64 bool uint64 uint64
-logical_xor dt_logical_xor_int64 bool int64 int64
-logical_xor dt_logical_xor_float8_e3m4 bool float8_e3m4 float8_e3m4
-logical_xor dt_logical_xor_bfloat16 bool bfloat16 bfloat16
-logical_xor dt_logical_xor_float16 bool float16 float16
-logical_xor dt_logical_xor_float32 bool float32 float32
-logical_xor dt_logical_xor_float64 bool float64 float64
 logical_not dt_logical_not_bool bool bool
-logical_not dt_logical_not_uint2 bool uint2
-logical_not dt_logical_not_int2 bool int2
-logical_not dt_logical_not_uint4 bool uint4
-logical_not dt_logical_not_int4 bool int4
-logical_not dt_logical_not_uint8 bool uint8
-logical_not dt_logical_not_int8 bool int8
-logical_not dt_logical_not_uint16 bool uint16
-logical_not dt_logical_not_int16 bool int16
-logical_not dt_logical_not_uint32 bool uint32
-logical_not dt_logical_not_int32 bool int32
-logical_not dt_logical_not_uint64 bool uint64
-logical_not dt_logical_not_int64 bool int64
-logical_not dt_logical_not_float8_e3m4 bool float8_e3m4
-logical_not dt_logical_not_bfloat16 bool bfloat16
-logical_not dt_logical_not_float16 bool float16
-logical_not dt_logical_not_float32 bool float32
-logical_not dt_logical_not_float64 bool float64
 min dt_min_bool bool bool bool
 min dt_min_uint2 uint2 uint2 uint2
 min dt_min_int2 int2 int2 int2

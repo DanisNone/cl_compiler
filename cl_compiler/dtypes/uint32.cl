@@ -111,22 +111,6 @@ dt_bool_work dt_less_equal_uint32(dt_uint32_work x, dt_uint32_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_uint32(dt_uint32_work x, dt_uint32_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_uint32(dt_uint32_work x, dt_uint32_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_uint32(dt_uint32_work x, dt_uint32_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_uint32(dt_uint32_work x) {
-    return !x;
-}
-
 dt_uint32_work dt_min_uint32(dt_uint32_work x, dt_uint32_work y) {
     return x < y ? x : y;
 }

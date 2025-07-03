@@ -111,22 +111,6 @@ dt_bool_work dt_less_equal_uint4(dt_uint4_work x, dt_uint4_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_uint4(dt_uint4_work x, dt_uint4_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_uint4(dt_uint4_work x, dt_uint4_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_uint4(dt_uint4_work x, dt_uint4_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_uint4(dt_uint4_work x) {
-    return !x;
-}
-
 dt_uint4_work dt_min_uint4(dt_uint4_work x, dt_uint4_work y) {
     return x < y ? x : y;
 }

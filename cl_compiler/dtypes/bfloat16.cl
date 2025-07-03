@@ -115,22 +115,6 @@ dt_bool_work dt_less_equal_bfloat16(dt_bfloat16_work x, dt_bfloat16_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_bfloat16(dt_bfloat16_work x, dt_bfloat16_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_bfloat16(dt_bfloat16_work x, dt_bfloat16_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_bfloat16(dt_bfloat16_work x, dt_bfloat16_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_bfloat16(dt_bfloat16_work x) {
-    return !x;
-}
-
 dt_bfloat16_work dt_negative_bfloat16(dt_bfloat16_work x) {
     return -x;
 }

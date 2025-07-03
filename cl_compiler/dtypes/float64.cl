@@ -177,22 +177,6 @@ dt_bool_work dt_less_equal_float64(dt_float64_work x, dt_float64_work y) {
     return x <= y;
 }
 
-dt_bool_work dt_logical_and_float64(dt_float64_work x, dt_float64_work y) {
-    return x && y;
-}
-
-dt_bool_work dt_logical_or_float64(dt_float64_work x, dt_float64_work y) {
-    return x || y;
-}
-
-dt_bool_work dt_logical_xor_float64(dt_float64_work x, dt_float64_work y) {
-    return (!!x) ^ (!!y);
-}
-
-dt_bool_work dt_logical_not_float64(dt_float64_work x) {
-    return !x;
-}
-
 dt_float64_work dt_negative_float64(dt_float64_work x) {
     return -x;
 }

@@ -108,26 +108,6 @@ dt_bool_work dt_less_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
     return x <= y;
 }
 
-!ADDFUNC logical_and
-dt_bool_work dt_logical_and_$name$(dt_$name$_work x, dt_$name$_work y) {
-    return x && y;
-}
-
-!ADDFUNC logical_or
-dt_bool_work dt_logical_or_$name$(dt_$name$_work x, dt_$name$_work y) {
-    return x || y;
-}
-
-!ADDFUNC logical_xor
-dt_bool_work dt_logical_xor_$name$(dt_$name$_work x, dt_$name$_work y) {
-    return (!!x) ^ (!!y);
-}
-
-!ADDFUNC logical_not
-dt_bool_work dt_logical_not_$name$(dt_$name$_work x) {
-    return !x;
-}
-
 !ADDFUNC negative
 dt_$name$_work dt_negative_$name$(dt_$name$_work x) {
     return -x;
