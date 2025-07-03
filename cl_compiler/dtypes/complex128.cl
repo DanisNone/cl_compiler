@@ -88,11 +88,46 @@ dt_complex128_work dt_log_complex128(dt_complex128_work x) {
     );
 }
 
+dt_complex128_work dt_log2_complex128(dt_complex128_work x) {
+    return dt_make_complex128_work(
+        log2(hypot(x.real, x.imag)),
+        atan2(x.imag, x.real) / dt_const_log2_float64
+    );
+}
+
+dt_complex128_work dt_log10_complex128(dt_complex128_work x) {
+    return dt_make_complex128_work(
+        log10(hypot(x.real, x.imag)),
+        atan2(x.imag, x.real) / dt_const_log10_float64
+    );
+}
+
 dt_complex128_work dt_exp_complex128(dt_complex128_work x) {
     dt_float64_work exp_ = exp(x.real);
     return dt_make_complex128_work(
         exp_ * cos(x.imag),
         exp_ * sin(x.imag)
+    );
+}
+
+
+dt_complex128_work dt_exp2_complex128(dt_complex128_work x) {
+    dt_float64_work exp_ = exp2(x.real);
+    dt_float64_work angle = x.imag * dt_const_log2_float64;
+    
+    return dt_make_complex128_work(
+        exp_ * cos(angle),
+        exp_ * sin(angle)
+    );
+}
+
+dt_complex128_work dt_exp10_complex128(dt_complex128_work x) {
+    dt_float64_work exp_ = exp10(x.real);
+    dt_float64_work angle = x.imag * dt_const_log10_float64;
+    
+    return dt_make_complex128_work(
+        exp_ * cos(angle),
+        exp_ * sin(angle)
     );
 }
 

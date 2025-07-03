@@ -94,12 +94,51 @@ dt_$name$_work dt_log_$name$(dt_$name$_work x) {
     );
 }
 
+!ADDFUNC log2
+dt_$name$_work dt_log2_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(
+        log2(hypot(x.real, x.imag)),
+        atan2(x.imag, x.real) / dt_const_log2_$floatname$
+    );
+}
+
+!ADDFUNC log10
+dt_$name$_work dt_log10_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(
+        log10(hypot(x.real, x.imag)),
+        atan2(x.imag, x.real) / dt_const_log10_$floatname$
+    );
+}
+
 !ADDFUNC exp
 dt_$name$_work dt_exp_$name$(dt_$name$_work x) {
     dt_$floatname$_work exp_ = exp(x.real);
     return dt_make_$name$_work(
         exp_ * cos(x.imag),
         exp_ * sin(x.imag)
+    );
+}
+
+
+!ADDFUNC exp2
+dt_$name$_work dt_exp2_$name$(dt_$name$_work x) {
+    dt_$floatname$_work exp_ = exp2(x.real);
+    dt_$floatname$_work angle = x.imag * dt_const_log2_$floatname$;
+    
+    return dt_make_$name$_work(
+        exp_ * cos(angle),
+        exp_ * sin(angle)
+    );
+}
+
+!ADDFUNC exp10
+dt_$name$_work dt_exp10_$name$(dt_$name$_work x) {
+    dt_$floatname$_work exp_ = exp10(x.real);
+    dt_$floatname$_work angle = x.imag * dt_const_log10_$floatname$;
+    
+    return dt_make_$name$_work(
+        exp_ * cos(angle),
+        exp_ * sin(angle)
     );
 }
 
