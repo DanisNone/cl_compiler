@@ -119,8 +119,4 @@ dt_uint16_work dt_max_uint16(dt_uint16_work x, dt_uint16_work y) {
     return x < y ? y : x;
 }
 
-dt_uint16_work dt_mad_uint16(dt_uint16_work x, dt_uint16_work y, dt_uint16_work z) {
-    return x * y + z;
-}
-
 #endif

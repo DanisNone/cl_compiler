@@ -121,8 +121,4 @@ dt_int64_work dt_max_int64(dt_int64_work x, dt_int64_work y) {
     return x < y ? y : x;
 }
 
-dt_int64_work dt_mad_int64(dt_int64_work x, dt_int64_work y, dt_int64_work z) {
-    return x * y + z;
-}
-
 #endif

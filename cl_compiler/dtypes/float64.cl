@@ -124,10 +124,6 @@ dt_float64_work dt_max_float64(dt_float64_work x, dt_float64_work y) {
     return x < y ? y : x;
 }
 
-dt_float64_work dt_mad_float64(dt_float64_work x, dt_float64_work y, dt_float64_work z) {
-    return x * y + z;
-}
-
 dt_float64_work dt_floor_divide_float64(dt_float64_work x, dt_float64_work y) {
     return floor(x / y);
 }

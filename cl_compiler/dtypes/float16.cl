@@ -117,10 +117,6 @@ dt_float16_work dt_max_float16(dt_float16_work x, dt_float16_work y) {
     return x < y ? y : x;
 }
 
-dt_float16_work dt_mad_float16(dt_float16_work x, dt_float16_work y, dt_float16_work z) {
-    return x * y + z;
-}
-
 dt_float16_work dt_floor_divide_float16(dt_float16_work x, dt_float16_work y) {
     return floor(x / y);
 }

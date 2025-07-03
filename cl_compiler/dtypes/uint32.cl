@@ -119,8 +119,4 @@ dt_uint32_work dt_max_uint32(dt_uint32_work x, dt_uint32_work y) {
     return x < y ? y : x;
 }
 
-dt_uint32_work dt_mad_uint32(dt_uint32_work x, dt_uint32_work y, dt_uint32_work z) {
-    return x * y + z;
-}
-
 #endif

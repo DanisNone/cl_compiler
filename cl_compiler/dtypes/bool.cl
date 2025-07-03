@@ -88,8 +88,4 @@ dt_bool_work dt_max_bool(dt_bool_work x, dt_bool_work y) {
     return x || y;
 }
 
-dt_bool_work dt_mad_bool(dt_bool_work x, dt_bool_work y, dt_bool_work z) {
-    return (x && y) || z;
-}
-
 #endif

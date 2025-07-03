@@ -87,10 +87,6 @@ dt_float8_e3m4_work dt_max_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_wor
     return x < y ? y : x;
 }
 
-dt_float8_e3m4_work dt_mad_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_work y, dt_float8_e3m4_work z) {
-    return x * y + z;
-}
-
 dt_float8_e3m4_work dt_floor_divide_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_work y) {
     return floor(x / y);
 }

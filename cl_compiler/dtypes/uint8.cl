@@ -119,8 +119,4 @@ dt_uint8_work dt_max_uint8(dt_uint8_work x, dt_uint8_work y) {
     return x < y ? y : x;
 }
 
-dt_uint8_work dt_mad_uint8(dt_uint8_work x, dt_uint8_work y, dt_uint8_work z) {
-    return x * y + z;
-}
-
 #endif

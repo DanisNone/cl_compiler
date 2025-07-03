@@ -257,24 +257,6 @@ max dt_max_bfloat16 bfloat16 bfloat16 bfloat16
 max dt_max_float16 float16 float16 float16
 max dt_max_float32 float32 float32 float32
 max dt_max_float64 float64 float64 float64
-mad dt_mad_bool bool bool bool bool
-mad dt_mad_uint2 uint2 uint2 uint2 uint2
-mad dt_mad_int2 int2 int2 int2 int2
-mad dt_mad_uint4 uint4 uint4 uint4 uint4
-mad dt_mad_int4 int4 int4 int4 int4
-mad dt_mad_uint8 uint8 uint8 uint8 uint8
-mad dt_mad_int8 int8 int8 int8 int8
-mad dt_mad_uint16 uint16 uint16 uint16 uint16
-mad dt_mad_int16 int16 int16 int16 int16
-mad dt_mad_uint32 uint32 uint32 uint32 uint32
-mad dt_mad_int32 int32 int32 int32 int32
-mad dt_mad_uint64 uint64 uint64 uint64 uint64
-mad dt_mad_int64 int64 int64 int64 int64
-mad dt_mad_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
-mad dt_mad_bfloat16 bfloat16 bfloat16 bfloat16 bfloat16
-mad dt_mad_float16 float16 float16 float16 float16
-mad dt_mad_float32 float32 float32 float32 float32
-mad dt_mad_float64 float64 float64 float64 float64
 subtract dt_subtract_uint2 uint2 uint2 uint2
 subtract dt_subtract_int2 int2 int2 int2
 subtract dt_subtract_uint4 uint4 uint4 uint4

@@ -121,8 +121,4 @@ dt_int8_work dt_max_int8(dt_int8_work x, dt_int8_work y) {
     return x < y ? y : x;
 }
 
-dt_int8_work dt_mad_int8(dt_int8_work x, dt_int8_work y, dt_int8_work z) {
-    return x * y + z;
-}
-
 #endif

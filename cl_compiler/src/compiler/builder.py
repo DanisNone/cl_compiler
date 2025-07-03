@@ -8,7 +8,7 @@ from cl_compiler.src.dtypes import DType
 
 class Builder:
     def __init__(self, kernel_name: str):
-        self.kernel_name = kernel_name
+        self.kernel_name = "_".join(["kernel", kernel_name])
         self.params: OrderedDict[str, tuple[Array, bool]] = OrderedDict()
         self.lines: list[str] = []
 

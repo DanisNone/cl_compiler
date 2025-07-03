@@ -119,8 +119,4 @@ dt_uint64_work dt_max_uint64(dt_uint64_work x, dt_uint64_work y) {
     return x < y ? y : x;
 }
 
-dt_uint64_work dt_mad_uint64(dt_uint64_work x, dt_uint64_work y, dt_uint64_work z) {
-    return x * y + z;
-}
-
 #endif

@@ -121,8 +121,4 @@ dt_int4_work dt_max_int4(dt_int4_work x, dt_int4_work y) {
     return x < y ? y : x;
 }
 
-dt_int4_work dt_mad_int4(dt_int4_work x, dt_int4_work y, dt_int4_work z) {
-    return x * y + z;
-}
-
 #endif

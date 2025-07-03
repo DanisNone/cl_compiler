@@ -42,10 +42,6 @@ dt_float32_work dt_max_float32(dt_float32_work x, dt_float32_work y) {
     return x < y ? y : x;
 }
 
-dt_float32_work dt_mad_float32(dt_float32_work x, dt_float32_work y, dt_float32_work z) {
-    return x * y + z;
-}
-
 dt_float32_work dt_floor_divide_float32(dt_float32_work x, dt_float32_work y) {
     return floor(x / y);
 }
