@@ -1,0 +1,108 @@
+#ifndef __DTYPES_$name$__
+#define __DTYPES_$name$__
+
+#include "dtypes/bool.cl"
+#include "dtypes/$floatname$.cl"
+
+typedef struct {
+    dt_$floatname$ real, imag;
+} dt_$name$;
+
+typedef struct {
+    dt_$floatname$_work real, imag;
+} dt_$name$_work;
+
+dt_$name$ dt_make_$name$(dt_$floatname$ real, dt_$floatname$ imag) {
+    dt_$name$ res;
+    res.real = real;
+    res.imag = imag;
+    return res;
+}
+
+dt_$name$_work dt_make_$name$_work(dt_$floatname$_work real, dt_$floatname$_work imag) {
+    dt_$name$_work res;
+    res.real = real;
+    res.imag = imag;
+    return res;
+}
+
+
+dt_$name$_work dt_normalize_input_$name$(dt_$name$ x) {
+    return dt_make_$name$_work(
+        dt_normalize_input_$floatname$(x.real),
+        dt_normalize_input_$floatname$(x.imag)
+    );
+}
+
+dt_$name$ dt_normalize_output_$name$(dt_$name$_work x) {
+    return dt_make_$name$(
+        dt_normalize_output_$floatname$(x.real),
+        dt_normalize_output_$floatname$(x.imag)
+    );
+}
+
+dt_$name$_work dt_zero_$name$() { return dt_make_$name$_work(0, 0); }
+dt_$name$_work dt_one_$name$() { return dt_make_$name$_work(1, 0); }
+
+!ADDFUNC add
+dt_$name$_work dt_add_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return dt_make_$name$_work(
+        x.real + y.real,
+        x.imag + y.imag
+    );
+}
+
+
+!ADDFUNC subtract
+dt_$name$_work dt_subtract_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return dt_make_$name$_work(
+        x.real - y.real,
+        x.imag - y.imag
+    );
+}
+
+!ADDFUNC multiply
+dt_$name$_work dt_multiply_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return dt_make_$name$_work(
+        x.real * y.real - x.imag * y.imag,
+        x.real * y.imag + x.imag * y.real
+    );
+}
+
+!ADDFUNC divide
+dt_$name$_work dt_divide_$name$(dt_$name$_work x, dt_$name$_work y) {
+    double denominator = y.real * y.real + y.imag * y.imag;
+    return dt_make_$name$_work(
+        (x.real * y.real + x.imag * y.imag) / denominator,
+        (x.imag * y.real - x.real * y.imag) / denominator
+    );
+}
+
+!ADDFUNC square
+dt_$name$_work dt_square_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(
+        (x.real - x.imag) * (x.real + x.imag),
+        2 * x.real * x.imag
+    );
+}
+
+!ADDFUNC equal
+dt_bool_work dt_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x.real == y.real && x.imag == y.imag;
+}
+
+!ADDFUNC not_equal
+dt_bool_work dt_not_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return x.real != y.real || x.imag != y.imag;
+}
+
+dt_$name$_work dt_negative_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(-x.real, -x.imag);
+}
+
+!ADDFUNC abs
+dt_$floatname$_work dt_abs_$name$(dt_$name$_work x) {
+    return hypot(x.real, x.imag);
+}
+
+#endif

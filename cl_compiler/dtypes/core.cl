@@ -16,6 +16,8 @@
 #include "dtypes/float16.cl"
 #include "dtypes/float32.cl"
 #include "dtypes/float64.cl"
+#include "dtypes/complex64.cl"
+#include "dtypes/complex128.cl"
 
 inline size_t flat_index(
     const size_t index,

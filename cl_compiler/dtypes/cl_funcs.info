@@ -16,6 +16,8 @@ add dt_add_bfloat16 bfloat16 bfloat16 bfloat16
 add dt_add_float16 float16 float16 float16
 add dt_add_float32 float32 float32 float32
 add dt_add_float64 float64 float64 float64
+add dt_add_complex64 complex64 complex64 complex64
+add dt_add_complex128 complex128 complex128 complex128
 multiply dt_multiply_bool bool bool bool
 multiply dt_multiply_uint2 uint2 uint2 uint2
 multiply dt_multiply_int2 int2 int2 int2
@@ -34,6 +36,8 @@ multiply dt_multiply_bfloat16 bfloat16 bfloat16 bfloat16
 multiply dt_multiply_float16 float16 float16 float16
 multiply dt_multiply_float32 float32 float32 float32
 multiply dt_multiply_float64 float64 float64 float64
+multiply dt_multiply_complex64 complex64 complex64 complex64
+multiply dt_multiply_complex128 complex128 complex128 complex128
 bitwise_and dt_bitwise_and_bool bool bool bool
 bitwise_and dt_bitwise_and_uint2 uint2 uint2 uint2
 bitwise_and dt_bitwise_and_int2 int2 int2 int2
@@ -91,6 +95,8 @@ square dt_square_bfloat16 bfloat16 bfloat16
 square dt_square_float16 float16 float16
 square dt_square_float32 float32 float32
 square dt_square_float64 float64 float64
+square dt_square_complex64 complex64 complex64
+square dt_square_complex128 complex128 complex128
 abs dt_abs_bool bool bool
 abs dt_abs_uint2 uint2 uint2
 abs dt_abs_int2 int2 int2
@@ -109,6 +115,8 @@ abs dt_abs_bfloat16 bfloat16 bfloat16
 abs dt_abs_float16 float16 float16
 abs dt_abs_float32 float32 float32
 abs dt_abs_float64 float64 float64
+abs dt_abs_complex64 float32 complex64
+abs dt_abs_complex128 float64 complex128
 equal dt_equal_bool bool bool bool
 equal dt_equal_uint2 bool uint2 uint2
 equal dt_equal_int2 bool int2 int2
@@ -127,6 +135,8 @@ equal dt_equal_bfloat16 bool bfloat16 bfloat16
 equal dt_equal_float16 bool float16 float16
 equal dt_equal_float32 bool float32 float32
 equal dt_equal_float64 bool float64 float64
+equal dt_equal_complex64 bool complex64 complex64
+equal dt_equal_complex128 bool complex128 complex128
 not_equal dt_not_equal_bool bool bool bool
 not_equal dt_not_equal_uint2 bool uint2 uint2
 not_equal dt_not_equal_int2 bool int2 int2
@@ -145,6 +155,8 @@ not_equal dt_not_equal_bfloat16 bool bfloat16 bfloat16
 not_equal dt_not_equal_float16 bool float16 float16
 not_equal dt_not_equal_float32 bool float32 float32
 not_equal dt_not_equal_float64 bool float64 float64
+not_equal dt_not_equal_complex64 bool complex64 complex64
+not_equal dt_not_equal_complex128 bool complex128 complex128
 greater_equal dt_greater_bool bool bool bool
 greater_equal dt_greater_equal_uint2 bool uint2 uint2
 greater_equal dt_greater_equal_int2 bool int2 int2
@@ -274,6 +286,8 @@ subtract dt_subtract_bfloat16 bfloat16 bfloat16 bfloat16
 subtract dt_subtract_float16 float16 float16 float16
 subtract dt_subtract_float32 float32 float32 float32
 subtract dt_subtract_float64 float64 float64 float64
+subtract dt_subtract_complex64 complex64 complex64 complex64
+subtract dt_subtract_complex128 complex128 complex128 complex128
 mod dt_mod_uint2 uint2 uint2 uint2
 mod dt_mod_int2 int2 int2 int2
 mod dt_mod_uint4 uint4 uint4 uint4
@@ -383,6 +397,8 @@ divide dt_divide_bfloat16 bfloat16 bfloat16 bfloat16
 divide dt_divide_float16 float16 float16 float16
 divide dt_divide_float32 float32 float32 float32
 divide dt_divide_float64 float64 float64 float64
+divide dt_divide_complex64 complex64 complex64 complex64
+divide dt_divide_complex128 complex128 complex128 complex128
 floor_divide dt_floor_divide_float8_e3m4 float8_e3m4 float8_e3m4 float8_e3m4
 floor_divide dt_floor_divide_bfloat16 bfloat16 bfloat16 bfloat16
 floor_divide dt_floor_divide_float16 float16 float16 float16

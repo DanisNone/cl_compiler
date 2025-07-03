@@ -19,4 +19,7 @@ from cl_compiler.src.dtypes import (  # noqa: F401
     float16 as float16,
     float32 as float32,
     float64 as float64,
+
+    complex64 as complex64,
+    complex128 as complex128,
 )

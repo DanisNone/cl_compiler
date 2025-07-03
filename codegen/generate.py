@@ -3,11 +3,11 @@ import re
 import bool as gen_bool
 import int as gen_int
 import float as gen_float
-
+import complex as gen_complex
 
 def get_dtype(line: str) -> str:
-    assert line.startswith("dt_")
-    assert line.endswith("_work")
+    assert line.startswith("dt_"), line
+    assert line.endswith("_work"), line
     return line.lstrip("dt_").strip("_work")
 
 
@@ -48,6 +48,15 @@ for float_name in ("float8_e3m4", "bfloat16", "float16", "float32", "float64"):
     save_path = path / (float_name + ".cl")
 
     source, funcs = gen_float.generate(float_name)
+    with open(save_path, "w") as out:
+        out.write(source)
+    update_funcs(all_funcs, funcs)
+
+for complex_name, float_name in ("complex64", "float32"), ("complex128", "float64"):
+    dtypes.append(complex_name)
+    save_path = path / (complex_name + ".cl")
+
+    source, funcs = gen_complex.generate(complex_name, float_name)
     with open(save_path, "w") as out:
         out.write(source)
     update_funcs(all_funcs, funcs)

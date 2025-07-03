@@ -75,10 +75,16 @@ float16 = DType(np.dtype(np.float16))
 float32 = DType(np.dtype(np.float32))
 float64 = DType(np.dtype(np.float64))
 
+
+complex64 = DType(np.dtype(np.complex64))
+complex128 = DType(np.dtype(np.complex128))
+
 boolean = [bool_]
 unsigned = [uint2, uint4, uint8, uint16, uint32, uint64]
 signed = [int2, int4, int8, int16, int32, int64]
 
 floating = [float8_e3m4, bfloat16, float16, float32, float64]
+complexfloating = [complex64, complex128]
+inexact = floating + complexfloating
 
-all_dtypes = boolean + unsigned + signed + floating
+all_dtypes = boolean + unsigned + signed + inexact
