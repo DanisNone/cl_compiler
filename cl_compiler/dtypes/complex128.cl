@@ -135,6 +135,50 @@ dt_complex128_work dt_power_complex128(dt_complex128_work x, dt_complex128_work 
     return dt_exp_complex128(dt_multiply_complex128(dt_log_complex128(x), y));
 }
 
+dt_complex128_work dt_sin_complex128(dt_complex128_work x) {
+    return dt_make_complex128_work(
+        sin(x.real) * cosh(x.imag),
+        cos(x.real) * sinh(x.imag)
+    );
+}
+
+dt_complex128_work dt_cos_complex128(dt_complex128_work x) {
+    return dt_make_complex128_work(
+        cos(x.real) * cosh(x.imag),
+        -sin(x.real) * sinh(x.imag)
+    );
+}
+
+dt_complex128_work dt_tan_complex128(dt_complex128_work x) {
+    dt_float64_work denom = cos(2 * x.real) + cosh(2 * x.imag);
+    return dt_make_complex128_work(
+        sin(2 * x.real) / denom,
+        sinh(2 * x.imag) / denom
+    );
+}
+
+dt_complex128_work dt_sinh_complex128(dt_complex128_work x) {
+    return dt_make_complex128_work(
+        sinh(x.real) * cos(x.imag),
+        cosh(x.real) * sin(x.imag)
+    );
+}
+
+dt_complex128_work dt_cosh_complex128(dt_complex128_work x) {
+    return dt_make_complex128_work(
+        cosh(x.real) * cos(x.imag),
+        sinh(x.real) * sin(x.imag)
+    );
+}
+
+dt_complex128_work dt_tanh_complex128(dt_complex128_work x) {
+    dt_float64_work denom = cosh(2 * x.real) + cos(2 * x.imag);
+    return dt_make_complex128_work(
+        sinh(2 * x.real) / denom,
+        sin(2 * x.imag) / denom
+    );
+}
+
 dt_bool_work dt_equal_complex128(dt_complex128_work x, dt_complex128_work y) {
     return x.real == y.real && x.imag == y.imag;
 }

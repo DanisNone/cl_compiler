@@ -147,6 +147,56 @@ dt_$name$_work dt_power_$name$(dt_$name$_work x, dt_$name$_work y) {
     return dt_exp_$name$(dt_multiply_$name$(dt_log_$name$(x), y));
 }
 
+!ADDFUNC sin
+dt_$name$_work dt_sin_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(
+        sin(x.real) * cosh(x.imag),
+        cos(x.real) * sinh(x.imag)
+    );
+}
+
+!ADDFUNC cos
+dt_$name$_work dt_cos_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(
+        cos(x.real) * cosh(x.imag),
+        -sin(x.real) * sinh(x.imag)
+    );
+}
+
+!ADDFUNC tan
+dt_$name$_work dt_tan_$name$(dt_$name$_work x) {
+    dt_$floatname$_work denom = cos(2 * x.real) + cosh(2 * x.imag);
+    return dt_make_$name$_work(
+        sin(2 * x.real) / denom,
+        sinh(2 * x.imag) / denom
+    );
+}
+
+!ADDFUNC sinh
+dt_$name$_work dt_sinh_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(
+        sinh(x.real) * cos(x.imag),
+        cosh(x.real) * sin(x.imag)
+    );
+}
+
+!ADDFUNC cosh
+dt_$name$_work dt_cosh_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(
+        cosh(x.real) * cos(x.imag),
+        sinh(x.real) * sin(x.imag)
+    );
+}
+
+!ADDFUNC tanh
+dt_$name$_work dt_tanh_$name$(dt_$name$_work x) {
+    dt_$floatname$_work denom = cosh(2 * x.real) + cos(2 * x.imag);
+    return dt_make_$name$_work(
+        sinh(2 * x.real) / denom,
+        sin(2 * x.imag) / denom
+    );
+}
+
 !ADDFUNC equal
 dt_bool_work dt_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
     return x.real == y.real && x.imag == y.imag;
