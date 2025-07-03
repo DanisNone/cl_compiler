@@ -26,6 +26,19 @@ dt_$name$_work dt_make_$name$_work(dt_$floatname$_work real, dt_$floatname$_work
     return res;
 }
 
+dt_$name$_work dt_rot90_$name$(dt_$name$_work x) {
+    dt_$name$_work res;
+    res.real = -x.imag;
+    res.imag = x.real;
+    return res;
+}
+
+dt_$name$_work dt_rot270_$name$(dt_$name$_work x) {
+    dt_$name$_work res;
+    res.real = x.imag;
+    res.imag = -x.real;
+    return res;
+}
 
 dt_$name$_work dt_normalize_input_$name$(dt_$name$ x) {
     return dt_make_$name$_work(
@@ -41,8 +54,10 @@ dt_$name$ dt_normalize_output_$name$(dt_$name$_work x) {
     );
 }
 
+
 dt_$name$_work dt_zero_$name$() { return dt_make_$name$_work(0, 0); }
 dt_$name$_work dt_one_$name$() { return dt_make_$name$_work(1, 0); }
+dt_$name$_work dt_two_$name$() { return dt_make_$name$_work(2, 0); }
 
 !ADDFUNC add
 dt_$name$_work dt_add_$name$(dt_$name$_work x, dt_$name$_work y) {
@@ -71,7 +86,7 @@ dt_$name$_work dt_multiply_$name$(dt_$name$_work x, dt_$name$_work y) {
 
 !ADDFUNC divide
 dt_$name$_work dt_divide_$name$(dt_$name$_work x, dt_$name$_work y) {
-    double denominator = y.real * y.real + y.imag * y.imag;
+    dt_$floatname$ denominator = y.real * y.real + y.imag * y.imag;
     return dt_make_$name$_work(
         (x.real * y.real + x.imag * y.imag) / denominator,
         (x.imag * y.real - x.real * y.imag) / denominator
@@ -142,6 +157,15 @@ dt_$name$_work dt_exp10_$name$(dt_$name$_work x) {
     );
 }
 
+!ADDFUNC sqrt
+dt_$name$_work dt_sqrt_$name$(dt_$name$_work x) {
+    dt_$floatname$_work mag = hypot(x.real, x.imag);
+    dt_$floatname$_work re = dt_sqrt_$floatname$((mag + x.real) * 0.5);
+    dt_$floatname$_work im = dt_sqrt_$floatname$((mag - x.real) * 0.5);
+    if (x.imag < 0) im = -im;
+    return dt_make_$name$_work(re, im);
+}
+
 !ADDFUNC power
 dt_$name$_work dt_power_$name$(dt_$name$_work x, dt_$name$_work y) {
     return dt_exp_$name$(dt_multiply_$name$(dt_log_$name$(x), y));
@@ -197,6 +221,113 @@ dt_$name$_work dt_tanh_$name$(dt_$name$_work x) {
     );
 }
 
+!ADDFUNC arcsin
+dt_$name$_work dt_arcsin_$name$(dt_$name$_work x) {
+    return dt_rot270_$name$(
+        dt_log_$name$(
+            dt_add_$name$(
+                dt_rot90_$name$(x),
+                dt_sqrt_$name$(
+                    dt_subtract_$name$(
+                        dt_one_$name$(),
+                        dt_square_$name$(x)
+                    )
+                )
+            )
+        )
+    );
+}
+
+
+!ADDFUNC arccos
+dt_$name$_work dt_arccos_$name$(dt_$name$_work x) {
+    return dt_rot270_$name$(
+        dt_log_$name$(
+            dt_add_$name$(
+                x,
+                dt_rot90_$name$(
+                    dt_sqrt_$name$(
+                        dt_subtract_$name$(
+                            dt_one_$name$(),
+                            dt_square_$name$(x)
+                        )
+                    )
+                )
+            )
+        )
+    );
+}
+
+!ADDFUNC arctan
+dt_$name$_work dt_arctan_$name$(dt_$name$_work x) {
+    return dt_rot90_$name$(
+        dt_divide_$name$(
+            dt_log_$name$(
+                dt_divide_$name$(
+                    dt_add_$name$(
+                        dt_rot90_$name$(dt_one_$name$()),
+                        x
+                    ),
+                    dt_subtract_$name$(
+                        dt_rot90_$name$(dt_one_$name$()),
+                        x
+                    )
+                )
+            ),
+            dt_two_$name$()
+        )
+    );
+}
+
+!ADDFUNC arcsinh
+dt_$name$_work dt_arcsinh_$name$(dt_$name$_work x) {
+    return dt_log_$name$(
+        dt_add_$name$(
+            x,
+            dt_sqrt_$name$(
+                dt_add_$name$(
+                    dt_square_$name$(x),
+                    dt_one_$name$()
+                )
+            )
+        )
+    );
+}
+
+!ADDFUNC arccosh
+dt_$name$_work dt_arccosh_$name$(dt_$name$_work x) {
+    return dt_log_$name$(
+        dt_add_$name$(
+            x,
+            dt_sqrt_$name$(
+                dt_subtract_$name$(
+                    dt_square_$name$(x),
+                    dt_one_$name$()
+                )
+            )
+        )
+    );
+}
+
+!ADDFUNC arctanh
+dt_$name$_work dt_arctanh_$name$(dt_$name$_work x) {
+    return dt_divide_$name$(
+        dt_log_$name$(
+            dt_divide_$name$(
+                dt_add_$name$(
+                    dt_one_$name$(),
+                    x
+                ),
+                dt_subtract_$name$(
+                    dt_one_$name$(),
+                    x
+                )
+            )
+        ),
+        dt_two_$name$()
+    );
+}
+
 !ADDFUNC equal
 dt_bool_work dt_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
     return x.real == y.real && x.imag == y.imag;
@@ -207,6 +338,7 @@ dt_bool_work dt_not_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
     return x.real != y.real || x.imag != y.imag;
 }
 
+!ADDFUNC negative
 dt_$name$_work dt_negative_$name$(dt_$name$_work x) {
     return dt_make_$name$_work(-x.real, -x.imag);
 }

@@ -26,6 +26,19 @@ dt_complex128_work dt_make_complex128_work(dt_float64_work real, dt_float64_work
     return res;
 }
 
+dt_complex128_work dt_rot90_complex128(dt_complex128_work x) {
+    dt_complex128_work res;
+    res.real = -x.imag;
+    res.imag = x.real;
+    return res;
+}
+
+dt_complex128_work dt_rot270_complex128(dt_complex128_work x) {
+    dt_complex128_work res;
+    res.real = x.imag;
+    res.imag = -x.real;
+    return res;
+}
 
 dt_complex128_work dt_normalize_input_complex128(dt_complex128 x) {
     return dt_make_complex128_work(
@@ -41,8 +54,10 @@ dt_complex128 dt_normalize_output_complex128(dt_complex128_work x) {
     );
 }
 
+
 dt_complex128_work dt_zero_complex128() { return dt_make_complex128_work(0, 0); }
 dt_complex128_work dt_one_complex128() { return dt_make_complex128_work(1, 0); }
+dt_complex128_work dt_two_complex128() { return dt_make_complex128_work(2, 0); }
 
 dt_complex128_work dt_add_complex128(dt_complex128_work x, dt_complex128_work y) {
     return dt_make_complex128_work(
@@ -67,7 +82,7 @@ dt_complex128_work dt_multiply_complex128(dt_complex128_work x, dt_complex128_wo
 }
 
 dt_complex128_work dt_divide_complex128(dt_complex128_work x, dt_complex128_work y) {
-    double denominator = y.real * y.real + y.imag * y.imag;
+    dt_float64 denominator = y.real * y.real + y.imag * y.imag;
     return dt_make_complex128_work(
         (x.real * y.real + x.imag * y.imag) / denominator,
         (x.imag * y.real - x.real * y.imag) / denominator
@@ -131,6 +146,14 @@ dt_complex128_work dt_exp10_complex128(dt_complex128_work x) {
     );
 }
 
+dt_complex128_work dt_sqrt_complex128(dt_complex128_work x) {
+    dt_float64_work mag = hypot(x.real, x.imag);
+    dt_float64_work re = dt_sqrt_float64((mag + x.real) * 0.5);
+    dt_float64_work im = dt_sqrt_float64((mag - x.real) * 0.5);
+    if (x.imag < 0) im = -im;
+    return dt_make_complex128_work(re, im);
+}
+
 dt_complex128_work dt_power_complex128(dt_complex128_work x, dt_complex128_work y) {
     return dt_exp_complex128(dt_multiply_complex128(dt_log_complex128(x), y));
 }
@@ -176,6 +199,107 @@ dt_complex128_work dt_tanh_complex128(dt_complex128_work x) {
     return dt_make_complex128_work(
         sinh(2 * x.real) / denom,
         sin(2 * x.imag) / denom
+    );
+}
+
+dt_complex128_work dt_arcsin_complex128(dt_complex128_work x) {
+    return dt_rot270_complex128(
+        dt_log_complex128(
+            dt_add_complex128(
+                dt_rot90_complex128(x),
+                dt_sqrt_complex128(
+                    dt_subtract_complex128(
+                        dt_one_complex128(),
+                        dt_square_complex128(x)
+                    )
+                )
+            )
+        )
+    );
+}
+
+
+dt_complex128_work dt_arccos_complex128(dt_complex128_work x) {
+    return dt_rot270_complex128(
+        dt_log_complex128(
+            dt_add_complex128(
+                x,
+                dt_rot90_complex128(
+                    dt_sqrt_complex128(
+                        dt_subtract_complex128(
+                            dt_one_complex128(),
+                            dt_square_complex128(x)
+                        )
+                    )
+                )
+            )
+        )
+    );
+}
+
+dt_complex128_work dt_arctan_complex128(dt_complex128_work x) {
+    return dt_rot90_complex128(
+        dt_divide_complex128(
+            dt_log_complex128(
+                dt_divide_complex128(
+                    dt_add_complex128(
+                        dt_rot90_complex128(dt_one_complex128()),
+                        x
+                    ),
+                    dt_subtract_complex128(
+                        dt_rot90_complex128(dt_one_complex128()),
+                        x
+                    )
+                )
+            ),
+            dt_two_complex128()
+        )
+    );
+}
+
+dt_complex128_work dt_arcsinh_complex128(dt_complex128_work x) {
+    return dt_log_complex128(
+        dt_add_complex128(
+            x,
+            dt_sqrt_complex128(
+                dt_add_complex128(
+                    dt_square_complex128(x),
+                    dt_one_complex128()
+                )
+            )
+        )
+    );
+}
+
+dt_complex128_work dt_arccosh_complex128(dt_complex128_work x) {
+    return dt_log_complex128(
+        dt_add_complex128(
+            x,
+            dt_sqrt_complex128(
+                dt_subtract_complex128(
+                    dt_square_complex128(x),
+                    dt_one_complex128()
+                )
+            )
+        )
+    );
+}
+
+dt_complex128_work dt_arctanh_complex128(dt_complex128_work x) {
+    return dt_divide_complex128(
+        dt_log_complex128(
+            dt_divide_complex128(
+                dt_add_complex128(
+                    dt_one_complex128(),
+                    x
+                ),
+                dt_subtract_complex128(
+                    dt_one_complex128(),
+                    x
+                )
+            )
+        ),
+        dt_two_complex128()
     );
 }
 
