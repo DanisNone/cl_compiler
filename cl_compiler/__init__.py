@@ -4,12 +4,11 @@ from cl_compiler.src.core import (
 
 from cl_compiler.src.compiler.compiler import (
     Compiler as Compiler,
-    Array as Array,
     ConstantArray as ConstantArray
 )
 
 from cl_compiler.src.elementwise import (
-abs as abs,
+    abs as abs,
     add as add,
     arccos as arccos,
     arccosh as arccosh,
