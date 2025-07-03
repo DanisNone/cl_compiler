@@ -86,6 +86,28 @@ dt_$name$_work dt_square_$name$(dt_$name$_work x) {
     );
 }
 
+!ADDFUNC log
+dt_$name$_work dt_log_$name$(dt_$name$_work x) {
+    return dt_make_$name$_work(
+        log(hypot(x.real, x.imag)),
+        atan2(x.imag, x.real)
+    );
+}
+
+!ADDFUNC exp
+dt_$name$_work dt_exp_$name$(dt_$name$_work x) {
+    dt_$floatname$_work exp_ = exp(x.real);
+    return dt_make_$name$_work(
+        exp_ * cos(x.imag),
+        exp_ * sin(x.imag)
+    );
+}
+
+!ADDFUNC power
+dt_$name$_work dt_power_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return dt_exp_$name$(dt_multiply_$name$(dt_log_$name$(x), y));
+}
+
 !ADDFUNC equal
 dt_bool_work dt_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
     return x.real == y.real && x.imag == y.imag;

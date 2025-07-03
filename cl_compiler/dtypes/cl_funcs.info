@@ -322,6 +322,8 @@ power dt_power_bfloat16 bfloat16 bfloat16 bfloat16
 power dt_power_float16 float16 float16 float16
 power dt_power_float32 float32 float32 float32
 power dt_power_float64 float64 float64 float64
+power dt_power_complex64 complex64 complex64 complex64
+power dt_power_complex128 complex128 complex128 complex128
 left_shift dt_left_shift_uint2 uint2 uint2 uint2
 left_shift dt_left_shift_int2 int2 int2 int2
 left_shift dt_left_shift_uint4 uint4 uint4 uint4
@@ -424,6 +426,8 @@ exp dt_exp_bfloat16 bfloat16 bfloat16
 exp dt_exp_float16 float16 float16
 exp dt_exp_float32 float32 float32
 exp dt_exp_float64 float64 float64
+exp dt_exp_complex64 complex64 complex64
+exp dt_exp_complex128 complex128 complex128
 exp2 dt_exp2_float8_e3m4 float8_e3m4 float8_e3m4
 exp2 dt_exp2_bfloat16 bfloat16 bfloat16
 exp2 dt_exp2_float16 float16 float16
@@ -444,6 +448,8 @@ log dt_log_bfloat16 bfloat16 bfloat16
 log dt_log_float16 float16 float16
 log dt_log_float32 float32 float32
 log dt_log_float64 float64 float64
+log dt_log_complex64 complex64 complex64
+log dt_log_complex128 complex128 complex128
 log2 dt_log2_float8_e3m4 float8_e3m4 float8_e3m4
 log2 dt_log2_bfloat16 bfloat16 bfloat16
 log2 dt_log2_float16 float16 float16

@@ -81,6 +81,25 @@ dt_complex128_work dt_square_complex128(dt_complex128_work x) {
     );
 }
 
+dt_complex128_work dt_log_complex128(dt_complex128_work x) {
+    return dt_make_complex128_work(
+        log(hypot(x.real, x.imag)),
+        atan2(x.imag, x.real)
+    );
+}
+
+dt_complex128_work dt_exp_complex128(dt_complex128_work x) {
+    dt_float64_work exp_ = exp(x.real);
+    return dt_make_complex128_work(
+        exp_ * cos(x.imag),
+        exp_ * sin(x.imag)
+    );
+}
+
+dt_complex128_work dt_power_complex128(dt_complex128_work x, dt_complex128_work y) {
+    return dt_exp_complex128(dt_multiply_complex128(dt_log_complex128(x), y));
+}
+
 dt_bool_work dt_equal_complex128(dt_complex128_work x, dt_complex128_work y) {
     return x.real == y.real && x.imag == y.imag;
 }
