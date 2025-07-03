@@ -27,7 +27,7 @@ dt_int2_work dt_multiply_int2(dt_int2_work x, dt_int2_work y) {
     return x * y;
 }
 
-dt_int2_work dt_modulo_int2(dt_int2_work x, dt_int2_work y) {
+dt_int2_work dt_mod_int2(dt_int2_work x, dt_int2_work y) {
     return x % y;
 }
 

@@ -27,7 +27,7 @@ dt_int8_work dt_multiply_int8(dt_int8_work x, dt_int8_work y) {
     return x * y;
 }
 
-dt_int8_work dt_modulo_int8(dt_int8_work x, dt_int8_work y) {
+dt_int8_work dt_mod_int8(dt_int8_work x, dt_int8_work y) {
     return x % y;
 }
 

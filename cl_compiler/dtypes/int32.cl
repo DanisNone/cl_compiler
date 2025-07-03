@@ -27,7 +27,7 @@ dt_int32_work dt_multiply_int32(dt_int32_work x, dt_int32_work y) {
     return x * y;
 }
 
-dt_int32_work dt_modulo_int32(dt_int32_work x, dt_int32_work y) {
+dt_int32_work dt_mod_int32(dt_int32_work x, dt_int32_work y) {
     return x % y;
 }
 

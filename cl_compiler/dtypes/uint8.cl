@@ -27,7 +27,7 @@ dt_uint8_work dt_multiply_uint8(dt_uint8_work x, dt_uint8_work y) {
     return x * y;
 }
 
-dt_uint8_work dt_modulo_uint8(dt_uint8_work x, dt_uint8_work y) {
+dt_uint8_work dt_mod_uint8(dt_uint8_work x, dt_uint8_work y) {
     return x % y;
 }
 

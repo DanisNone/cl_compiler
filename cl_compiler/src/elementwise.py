@@ -97,38 +97,167 @@ class ElementWiseBinary(ElementWise):
 class Negative(ElementWiseUnary):
     _name = "negative"
 
-
 class Add(ElementWiseBinary):
     _name = "add"
-
 
 class Subtract(ElementWiseBinary):
     _name = "subtract"
 
-
 class Multiply(ElementWiseBinary):
     _name = "multiply"
-
 
 class Divide(ElementWiseBinary):
     _name = "divide"
 
+class Mod(ElementWiseBinary):
+    _name = "mod"
+
+class Power(ElementWiseBinary):
+    _name = "power"
+
+class BitwiseAnd(ElementWiseBinary):
+    _name = "bitwise_and"
+
+class BitwiseOr(ElementWiseBinary):
+    _name = "bitwise_or"
+
+class BitwiseXor(ElementWiseBinary):
+    _name = "bitwise_xor"
+
+class LeftShift(ElementWiseBinary):
+    _name = "left_shift"
+
+class RightShift(ElementWiseBinary):
+    _name = "right_shift"
+
+class BitwiseNot(ElementWiseUnary):
+    _name = "bitwise_not"
+
+class Square(ElementWiseUnary):
+    _name = "square"
+
+class Abs(ElementWiseUnary):
+    _name = "abs"
+
+class Sign(ElementWiseUnary):
+    _name = "sign"
+
+class Equal(ElementWiseBinary):
+    _name = "equal"
+
+class NotEqual(ElementWiseBinary):
+    _name = "not_equal"
+
+class Greater(ElementWiseBinary):
+    _name = "greater"
+
+class GreaterEqual(ElementWiseBinary):
+    _name = "greater_equal"
+
+class Less(ElementWiseBinary):
+    _name = "less"
+
+class LessEqual(ElementWiseBinary):
+    _name = "less_equal"
+
+class LogicalAnd(ElementWiseBinary):
+    _name = "logical_and"
+
+class LogicalOr(ElementWiseBinary):
+    _name = "logical_or"
+
+class LogicalXor(ElementWiseBinary):
+    _name = "logical_xor"
+
+class LogicalNot(ElementWiseUnary):
+    _name = "logical_not"
+
+class Minimum(ElementWiseBinary):
+    _name = "min"
+
+class Maximum(ElementWiseBinary):
+    _name = "max"
 
 def negative(x: Array) -> Array:
     return get_current_context().add_operation(Negative, x)
 
-
 def add(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Add, x, y)
-
 
 def subtract(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Subtract, x, y)
 
-
 def multiply(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Multiply, x, y)
 
-
 def divide(x: Array, y: Array) -> Array:
     return get_current_context().add_operation(Divide, x, y)
+
+def mod(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Mod, x, y)
+
+def power(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Power, x, y)
+
+def bitwise_and(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(BitwiseAnd, x, y)
+
+def bitwise_or(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(BitwiseOr, x, y)
+
+def bitwise_xor(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(BitwiseXor, x, y)
+
+def left_shift(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(LeftShift, x, y)
+
+def right_shift(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(RightShift, x, y)
+
+def bitwise_not(x: Array) -> Array:
+    return get_current_context().add_operation(BitwiseNot, x)
+
+def square(x: Array) -> Array:
+    return get_current_context().add_operation(Square, x)
+
+def abs(x: Array) -> Array:
+    return get_current_context().add_operation(Abs, x)
+
+def sign(x: Array) -> Array:
+    return get_current_context().add_operation(Sign, x)
+
+def equal(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Equal, x, y)
+
+def not_equal(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(NotEqual, x, y)
+
+def greater(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Greater, x, y)
+
+def greater_equal(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(GreaterEqual, x, y)
+
+def less(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Less, x, y)
+
+def less_equal(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(LessEqual, x, y)
+
+def logical_and(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(LogicalAnd, x, y)
+
+def logical_or(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(LogicalOr, x, y)
+
+def logical_xor(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(LogicalXor, x, y)
+
+def logical_not(x: Array) -> Array:
+    return get_current_context().add_operation(LogicalNot, x)
+
+def minimum(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Minimum, x, y)
+
+def maximum(x: Array, y: Array) -> Array:
+    return get_current_context().add_operation(Maximum, x, y)

@@ -115,6 +115,10 @@ dt_bool_work dt_less_equal_bfloat16(dt_bfloat16_work x, dt_bfloat16_work y) {
     return x <= y;
 }
 
+dt_bool_work dt_mod_bfloat16(dt_bfloat16_work x, dt_bfloat16_work y) {
+    return fmod(x, y);
+}
+
 dt_bfloat16_work dt_negative_bfloat16(dt_bfloat16_work x) {
     return -x;
 }

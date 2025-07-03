@@ -27,7 +27,7 @@ dt_int64_work dt_multiply_int64(dt_int64_work x, dt_int64_work y) {
     return x * y;
 }
 
-dt_int64_work dt_modulo_int64(dt_int64_work x, dt_int64_work y) {
+dt_int64_work dt_mod_int64(dt_int64_work x, dt_int64_work y) {
     return x % y;
 }
 

@@ -27,7 +27,7 @@ dt_uint16_work dt_multiply_uint16(dt_uint16_work x, dt_uint16_work y) {
     return x * y;
 }
 
-dt_uint16_work dt_modulo_uint16(dt_uint16_work x, dt_uint16_work y) {
+dt_uint16_work dt_mod_uint16(dt_uint16_work x, dt_uint16_work y) {
     return x % y;
 }
 

@@ -27,7 +27,7 @@ dt_uint4_work dt_multiply_uint4(dt_uint4_work x, dt_uint4_work y) {
     return x * y;
 }
 
-dt_uint4_work dt_modulo_uint4(dt_uint4_work x, dt_uint4_work y) {
+dt_uint4_work dt_mod_uint4(dt_uint4_work x, dt_uint4_work y) {
     return x % y;
 }
 

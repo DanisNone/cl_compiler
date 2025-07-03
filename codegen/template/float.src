@@ -108,6 +108,11 @@ dt_bool_work dt_less_equal_$name$(dt_$name$_work x, dt_$name$_work y) {
     return x <= y;
 }
 
+!ADDFUNC mod
+dt_bool_work dt_mod_$name$(dt_$name$_work x, dt_$name$_work y) {
+    return fmod(x, y);
+}
+
 !ADDFUNC negative
 dt_$name$_work dt_negative_$name$(dt_$name$_work x) {
     return -x;

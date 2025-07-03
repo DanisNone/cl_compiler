@@ -177,6 +177,10 @@ dt_bool_work dt_less_equal_float64(dt_float64_work x, dt_float64_work y) {
     return x <= y;
 }
 
+dt_bool_work dt_mod_float64(dt_float64_work x, dt_float64_work y) {
+    return fmod(x, y);
+}
+
 dt_float64_work dt_negative_float64(dt_float64_work x) {
     return -x;
 }

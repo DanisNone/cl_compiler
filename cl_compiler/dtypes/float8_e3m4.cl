@@ -140,6 +140,10 @@ dt_bool_work dt_less_equal_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_wor
     return x <= y;
 }
 
+dt_bool_work dt_mod_float8_e3m4(dt_float8_e3m4_work x, dt_float8_e3m4_work y) {
+    return fmod(x, y);
+}
+
 dt_float8_e3m4_work dt_negative_float8_e3m4(dt_float8_e3m4_work x) {
     return -x;
 }

@@ -40,8 +40,8 @@ dt_$name$_work dt_multiply_$name$(dt_$name$_work x, dt_$name$_work y) {
     return x * y;
 }
 
-!ADDFUNC modulo
-dt_$name$_work dt_modulo_$name$(dt_$name$_work x, dt_$name$_work y) {
+!ADDFUNC mod
+dt_$name$_work dt_mod_$name$(dt_$name$_work x, dt_$name$_work y) {
     return x % y;
 }
 
